@@ -21,7 +21,7 @@ function Footer(){
                 {/* <p>Curabitur libero eros, efficitur sit amet sodales tincidunt, aliquet et leo sed ut nibh feugiat, auctor enim quis.</p> */}
               </div>
               <div className="button_box">
-                <a href="/Contact" className="btn btn-warning">Hire Me</a>
+                <a href="https://vwaran.me/Contact" className="btn btn-warning">Hire Me</a>
               </div>
             </div>
             <div className="col-lg-5">
