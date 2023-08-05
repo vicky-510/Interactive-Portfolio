@@ -18,7 +18,6 @@ const Experience = () => {
     <>
     <div id="Experience" className="rem-space">
       <br />  <br />
-      <br />   
     </div>
     <section className="portfolio-block cv"  style={{backgroundColor:'#182C61',color:'white'}} >
     <br/>
@@ -31,7 +30,7 @@ const Experience = () => {
           <h2 style={{fontWeight:'bolder', fontSize: '28px', color:'white', letterSpacing:'1px' }} >EXPERIENCE</h2>
 
           </div>
-          <br />
+         
           <br />
           <br />
           <div className="item" >

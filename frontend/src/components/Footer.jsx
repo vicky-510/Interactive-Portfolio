@@ -2,7 +2,7 @@
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram, FaMailBulk, FaMap, FaPhoneAlt } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 
 
 function Footer(){
@@ -21,7 +21,7 @@ function Footer(){
                 {/* <p>Curabitur libero eros, efficitur sit amet sodales tincidunt, aliquet et leo sed ut nibh feugiat, auctor enim quis.</p> */}
               </div>
               <div className="button_box">
-                <a href="https://vwaran.me/Contact" className="btn btn-warning">Hire Me</a>
+                <Link to="/Contact" className="btn btn-warning">Hire Me</Link>
               </div>
             </div>
             <div className="col-lg-5">
@@ -75,26 +75,25 @@ function Footer(){
                 </div>
                 <ul style={{ padding: 0, margin: 0 }}>
                   <li style={{ listStyleType: 'none' }}>
-                    <a href="/#About" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    <Link to="/#About" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
                       About
-                    </a>
-                  </li>
+                    </Link>
+               </li>
                   
                   <li style={{ listStyleType: 'none' }}>
-                    <a href="/#Contact" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    <Link to="/Contact" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
                       Contact
-                    </a>
-                    <li style={{ listStyleType: 'none' }}>
-                    <a href="/#Services" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    </Link>                    <li style={{ listStyleType: 'none' }}>
+                    <Link to="/#Service" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
                       Services
-                    </a>
+                   </ Link>
                     </li>
 
                   </li>
                   <li style={{ listStyleType: 'none' }}>
-                    <a href="/VoicePort" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61',marginBottom:'10px' }}>
+                    <Link to="/VoicePort" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61',marginBottom:'10px' }}>
                       VoicePort
-                    </a>
+                  </Link>
                   </li>
 
                 

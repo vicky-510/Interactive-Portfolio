@@ -348,7 +348,32 @@
   #icon{
     display: none;
   }
+
   
+  }
+
+
+
+  
+ @media (max-width: 450px) {
+  #cont-slide{
+    background-image: url(../img/main_bg2.png);
+    background-size: 390px;
+    background-repeat: no-repeat;
+    margin-bottom: none;
+    margin-top: 100px;
+    text-align: center;
+    background-position: top; 
+    }
+
+    .m-screen{
+      margin-top: 280px;
+    }
+
+    .carousel-item-left {
+      text-align: center;
+    }
+
   }
 
  /* @media (max-width: 670px) {

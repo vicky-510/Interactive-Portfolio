@@ -13,7 +13,6 @@ function Service() {
     <div id="Service" className="rem-space">
         <br/>
         
-        <br/>
       </div>
     <section  >
 

@@ -21,14 +21,13 @@ const Skills = () => {
   return (
     <>
     <div id="Skills" className="rem-space">
-    <br/>
     </div>
     <hr/>
     <section style={{ backgroundColor: 'white', borderRadius: 'none' }} >
       <Container style={{ backgroundColor: 'white', borderRadius: 'none' }}>
         <div className="card" style={{ backgroundColor: 'white', padding: '4% 0%', border: 'none' }}>
           <div className="card-body">
-            <h2 className="text-center weight" style={{ fontSize: '28px', color: '#182C61', letterSpacing:'1px',textTransform:'none' }}>
+            <h2 className="text-center weight" style={{ fontSize: '28px', color: '#182C61', letterSpacing:'1px',textTransform:'none', fontWeight:'800' }}>
               SKILLS
             </h2>
             <br />

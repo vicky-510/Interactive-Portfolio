@@ -10,8 +10,7 @@ const About = () => {
 
   return (
     <> 
-    <div id="About" className="rem-space"><br/>
-    <br/>
+    <div id="About" className="rem-space">
     </div>
     <section style={{
       fontFamily: 'Montserrat, sans-serif',
@@ -25,7 +24,6 @@ const About = () => {
     <br/>  <br/>
     <br/>
       <h2 className="text-center text-white" style={{ fontSize: '28px', fontWeight: 700 }}>ABOUT ME</h2>
-      <br />
       <br />
       <br />
       <Container className="card-container" style={{backgroundColor:'white'}}  >

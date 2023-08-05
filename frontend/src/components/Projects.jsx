@@ -20,15 +20,13 @@ function Projects() {
   return (
     <> 
     <div id="Projects" className="rem-space">
-    <br />  
-     <br /> <hr/>
+      <hr/>
        <br /> 
    </div>
     <div className="min-vh-100 bg-gradient-to-tr from-red-300 to-yellow-200 d-flex justify-content-center align-items-center py-5" >
 
       <div className="container-md">
       <h2 className='text-center' style={{fontWeight:'bolder', fontSize: '28px', color:'#182C61', letterSpacing:'1px'  }} >PROJECTS</h2>
-       <br/>
        <br/>
        <br/>
 
@@ -115,11 +113,11 @@ function Projects() {
                     <br/>
                     <br/>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Python</span>
-                    <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Flask</span>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>IBM Cloud</span>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>IBM DB2</span>
                     <br/>
                     <br/>
+                    <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Flask</span>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>IBM WATSON</span>
 
 
@@ -163,6 +161,8 @@ function Projects() {
                   <p> <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Core Java</span> 
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>XML</span>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Android</span>
+                    <br/>
+                    <br/>
                     <span style={{ border:'1px solid gray',padding:'4px 6px', borderRadius:'20px', marginRight:'3px',marginLeft:'5px', color:'#182C61', fontWeight:'500',letterSpacing:'1px'}}>Firebase</span>
                      </p>
                    
