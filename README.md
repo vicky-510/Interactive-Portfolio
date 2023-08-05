@@ -1,7 +1,7 @@
 ## Interactive Portfolio: Leveraging Web Speech API Integration for Expressive Content Narration
 
 
-* ### Deployed status
+* ### Deployed on
 
 <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />  <img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white" />
 
