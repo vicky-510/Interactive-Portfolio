@@ -164,6 +164,11 @@ const Contacts = () => {
       </Container>
       <br />
       <br />
+      <h5 className="text-center" style={{  color: '#182C61' }}>
+          <br/>       
+            Note:  This Page is under Maintenance 😊
+
+          </h5>
       <br />
       <br />
     </section>
