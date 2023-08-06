@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: ['https://vwaran.me']
+    origin:'https://vwaran.me/'
   }));
 
 app.use('/api/admin', adminRoutes);
