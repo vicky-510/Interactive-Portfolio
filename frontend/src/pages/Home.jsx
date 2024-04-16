@@ -2,12 +2,10 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Starter from '../components/Starter'
-// import WebSpeech from './Components/WebSpeech'
 import Service from '../components/Service'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
-// import Contacts from '../components/Contacts'
 import About from '../components/About'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
@@ -15,13 +13,20 @@ import { HashLink } from "react-router-hash-link";
 
 
 
+
+
  function Home (){
+
   useEffect(() => {
+
+    
     AOS.init({
       duration: 1200,
     });
     AOS.refresh();
+
   }, []);
+
 
   return (
     <>

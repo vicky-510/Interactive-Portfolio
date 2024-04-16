@@ -32,7 +32,8 @@ function Footer(){
       </div>
     </section>
     <footer className="deneb_footer" >
-      <div className="widget_wrapper" style={{ backgroundImage: "url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png)" }}>
+      <div className="widget_wrapper">
+      {/* style={{ backgroundImage: "url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png)" }} */}
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 col-12">
@@ -44,22 +45,22 @@ function Footer(){
                 <p style={{color: '#182C61', fontWeight:'500', letterSpacing:'1px', marginBottom:'20px'}} id="foot-content">Expert in crafting responsive and user-friendly websites. Offering professional web development services to elevate your online presence. Let&lsquo;s collaborate and bring your vision to life. Contact me to get started.</p>
                 <ul className="social" style={{display:'inline-flex', listStyleType:'none'}}>
                   <li> 
-                    <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="footer">
                     <FaLinkedin size={26} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
                    </a>
                   </li>
                   <li>
-                  <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer">
+                  <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" aria-label="footer">
                   <FaWhatsapp size={26} color="#182C61" style={{marginRight:'8px'}}/>
                   </a>
                   </li>
                   <li>
-                  <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="footer">
                    <FaGithub size={26} color="#182C61" style={{marginRight:'8px'}}/>
                   </a>
                   </li>
                   <li>
-                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="footer">
                    <FaInstagram size={26} color="#182C61"  />
                   </a>
                   </li>
@@ -67,40 +68,37 @@ function Footer(){
                 <br/><br/><br/>
               </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12">
-              <div className="widget widget_link">
-                <div className="widget_title">
 
-                  <h4 style={{fontWeight: 600}}>Links</h4>
-                </div>
-                <ul style={{ padding: 0, margin: 0 }}>
-                  <li style={{ listStyleType: 'none' }}>
-                    <Link to="/#About" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
-                      About
-                    </Link>
-               </li>
-                  
-                  <li style={{ listStyleType: 'none' }}>
-                    <Link to="/Contact" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
-                      Contact
-                    </Link>                    <li style={{ listStyleType: 'none' }}>
-                    <Link to="/#Service" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
-                      Services
-                   </ Link>
-                    </li>
-
-                  </li>
-                  <li style={{ listStyleType: 'none' }}>
-                    <Link to="/VoicePort" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61',marginBottom:'10px' }}>
-                      VoicePort
-                  </Link>
-                  </li>
-
-                
-                </ul>
-
+                      <div className="col-lg-4 col-md-6 col-sm-12">
+            <div className="widget widget_link">
+              <div className="widget_title">
+                <h4 style={{fontWeight: 600}}>Links</h4>
               </div>
+              <ul style={{ padding: 0, margin: 0 }}>
+                <li style={{ listStyleType: 'none' }}>
+                  <Link to="/#About" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    About
+                  </Link>
+                </li>
+                <li style={{ listStyleType: 'none' }}>
+                  <Link to="/Contact" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    Contact
+                  </Link>
+                </li>
+                <li style={{ listStyleType: 'none' }}>
+                  <Link to="/#Service" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                    Services
+                  </Link>
+                </li>
+                <li style={{ listStyleType: 'none' }}>
+                  <Link to="/VoicePort" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61', marginBottom: '10px' }}>
+                    VoicePort
+                  </Link>
+                </li>
+              </ul>
             </div>
+           </div>
+
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="widget widget_contact">
                 <div className="widget_title">
@@ -113,7 +111,7 @@ function Footer(){
                     <div className="icon">
                     <FaPhoneAlt size={17} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
                     </div>
-                      <p><a href="tel:+919246147999" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }}>
+                      <p><a href="tel:+919246147999" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }} aria-label="footer">
                         +91 8189950272
                       </a>
                       </p>
@@ -125,7 +123,7 @@ function Footer(){
                     </div>
                     
                     <div className="info">
-                    <p><a href="mailto:vignesh510510@gmail.com" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }}>vignesh510510@gmail.com</a></p>
+                    <p><a href="mailto:vignesh510510@gmail.com" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }} aria-label="footer">vignesh510510@gmail.com</a></p>
                     <div className="icon">
                     <FaMap size={20} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
                     </div>

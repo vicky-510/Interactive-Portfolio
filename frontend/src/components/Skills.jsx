@@ -1,17 +1,17 @@
 // import React from "react";
 import { Container, Col, Card } from 'react-bootstrap';
-import html5 from '../assets/img/html5.png';
-import css3 from '../assets/img/css-3.png';
-import js from '../assets/img/JS.png';
-import bootstrap from '../assets/img/Bootstrap-frame.png';
-import react from '../assets/img/react-1.png';
-import mysql from '../assets/img/mysql-4.png';
-import node from '../assets/img/node-1.png';
-import express from '../assets/img/express-1.png';
-import jquery from '../assets/img/jquery-3.png';
-import java from '../assets/img/java-2.png';
-import php from '../assets/img/php2.png';
-import mongodb from '../assets/img/mongo-db.png';
+import html5 from '../assets/img/html5.webp';
+import css3 from '../assets/img/css-3.webp';
+import js from '../assets/img/JS.webp';
+import bootstrap from '../assets/img/Bootstrap-frame.webp';
+import react from '../assets/img/react-1.webp';
+import mysql from '../assets/img/mysql-4.webp';
+import node from '../assets/img/node-1.webp';
+import express from '../assets/img/express-1.webp';
+import jquery from '../assets/img/jquery-3.webp';
+import java from '../assets/img/java-2.webp';
+import php from '../assets/img/php2.webp';
+import mongodb from '../assets/img/mongo-db.webp';
 import '../assets/styles/Main.css';
 
 

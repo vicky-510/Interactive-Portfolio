@@ -29,7 +29,7 @@ function Service() {
                 <div className="card special-skill-item border-0" style={{backgroundColor: '#182C61'}}>
                     <div className="card-header" style={{backgroundColor: '#182C61'}}>
                     <br/>
-                    <IoCode size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#45aaf2',borderRadius:'30px',padding:'5px'}}/>
+                    <IoCode size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#03A9F4',borderRadius:'30px',padding:'5px'}}/>
     
                     <div className="card-body">
                         <h3 className="card-title text-white"  style={{fontWeight:'600'}}>Web Development</h3>
@@ -44,7 +44,7 @@ function Service() {
                 <div className="card special-skill-item border-0" style={{backgroundColor: '#182C61'}}>
                     <div className="card-header " style={{backgroundColor: '#182C61'}}>
                     <br/>
-                    <IoPlanet size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#45aaf2',borderRadius:'30px',padding:'5px'}}/>
+                    <IoPlanet size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#03A9F4',borderRadius:'30px',padding:'5px'}}/>
     
                     
                     <div className="card-body">
@@ -59,7 +59,7 @@ function Service() {
                 <div className="card special-skill-item border-0" style={{backgroundColor: '#182C61'}}>
                     <div className="card-header" style={{backgroundColor: '#182C61'}}>
                     <br/>
-                    <SiPayloadcms size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#45aaf2',borderRadius:'30px',padding:'7px'}}/>
+                    <SiPayloadcms size={50} color="#182C61" style={{fontWeight:'bolder', backgroundColor:'#03A9F4',borderRadius:'30px',padding:'7px'}}/>
                  
                     <div className="card-body">
                         <h3 className="card-title text-white"  style={{fontWeight:'600'}}>CMS Development</h3>

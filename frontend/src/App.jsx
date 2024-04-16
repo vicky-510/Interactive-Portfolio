@@ -1,63 +1,59 @@
 import { Routes, Route } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Home from './pages/Home';
-import VoicePort from './pages/VoicePort';
-import Login from './pages/Login';
-import Register from './Pages/Register';
-import Profile from './pages/Profile';
-import Contact from './pages/Contacts';
-// import ContactList from './pages/ContactList';
+import { lazy, Suspense } from 'react';
+import LoadingSpinner from './components/LoadingSpinner';
 
 
-// import Navbar from './components/Navbar';
-// import Dashboard from './pages/Dashboard';
+const Home = lazy(() => import('./pages/Home'));
+const VoicePort = lazy(() => import('./pages/VoicePort'));
+const Login = lazy(() => import('./pages/Login'));
+const Register = lazy(() => import('./pages/Register'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Contact = lazy(() => import('./pages/Contacts'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
+
+
+
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
-import Dashboard from './pages/Dashboard';
-import PrivateRoute from './components/PrivateRoute';
-// import ShowContacts from './pages/ShowContacts';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   return (
     <>
-          {/* <Navbar /> */}
+      {/* <Navbar /> */}
+      <Suspense fallback={<LoadingSpinner />} >
 
-      <ToastContainer />
+        <ToastContainer />
 
         <Routes>
-          <Route  path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/VoicePort" element={<VoicePort />} />
           <Route path="/Contact" element={<Contact />} />
 
-          
-           {/* Private Routes */}
+
+          {/* Private Routes */}
           <Route path='' element={<PrivateRoute />} >
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          {/* <Route path="/Contacts" element={<ShowContacts />} /> */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
 
           </Route>
         </Routes>
-    
+      </Suspense>
+
       <HashLink smooth to="/#Home" />
       <HashLink smooth to="/#Projects" />
       <HashLink smooth to="/#Experience" />
       <HashLink smooth to="/#Skills" />
       <HashLink smooth to="/#Service" />
       <HashLink smooth to="/#About" />
-      {/* <HashLink smooth to="/#Contact" /> */}
-      {/* <HashLink smooth to="/VoicePort#web" /> */}
-      {/* <HashLink smooth to="/VoicePort#Projects" />
-      <HashLink smooth to="/VoicePort#Experience" />
-      <HashLink smooth to="/VoicePort#Skills" />
-      <HashLink smooth to="/VoicePort#Service" />
-      <HashLink smooth to="/VoicePort#About" />
-      <HashLink smooth to="/VoicePort#Contact" /> */}
+
+
     </>
   );
 }

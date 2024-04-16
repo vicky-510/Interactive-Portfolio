@@ -1,0 +1,115 @@
+/* Experience.module.css */
+
+.experienceSection {
+    background-color: #182C61;
+    color: white;
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .experienceContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .experienceCard {
+    background-color: #25376D;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+  }
+  
+  .experienceTitle {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0 0 20px;
+  }
+  
+  .jobTitle {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .company {
+    font-weight: 500;
+    font-size: 17px;
+    color: #182C61;
+    background-color: #FFC312;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin: 0 0 20px;
+  }
+  
+  .experienceDate {
+    font-size: 15px;
+    background-color: #FFC312;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0 0 20px;
+  }
+  
+  .divider {
+    border: 0;
+    border-top: 1px solid #93e8ff;
+    margin: 20px 0;
+  }
+  
+  .experiencePoints {
+    margin: 0 0 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .experiencePoints li {
+    margin: 0 0 10px;
+  }
+  
+  .skills {
+    padding: 4px 0;
+  }
+  
+  .skillTag {
+    background-color: #93e8ff;
+    color: #182C61;
+    font-weight: 500;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .certificateButton {
+    background-color: #FFC312;
+    color: #182C61;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 0;
+  }
+  
+  .certificateImageContainer {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .certificateImage {
+    width: 100%;
+    max-width: 600px;
+    border: 15px solid white;
+  }
+  

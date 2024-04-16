@@ -53,7 +53,7 @@
     font-weight:'500';
     font-size: '14px';
     color: #182C61;
-    background-Color: greenyellow;
+    background-color: greenyellow;
     width: fit-content;
     padding: 2px 6px;
     border-radius:15px;
@@ -68,7 +68,7 @@
         letter-spacing: 1.5px; color: #182C61;
         margin-top: 110px; 
         margin-bottom: 20px; 
-        background-image: url(../img/main_bg2.png);
+        background-image: url(../img/main_bg2.webp);
         background-size: 720px;
         background-repeat: no-repeat;
         background-position: right;
@@ -275,7 +275,7 @@
 
  @media (max-width: 960px) {
   #cont-slide{
-    background-image: url(../img/main_bg2.png);
+    background-image: url(../img/main_bg2.webp);
     background-size: 600px;
     background-repeat: no-repeat;
     margin-bottom: none;
@@ -284,7 +284,7 @@
     background-position: top; 
   }
     .m-screen{
-      margin-top: 350px;
+      margin-top: 360px;
     }
     .carousel-item-left {
       text-align: center;
@@ -295,7 +295,7 @@
 
  @media (max-width: 678px) {
   #cont-slide{
-    background-image: url(../img/main_bg2.png);
+    background-image: url(../img/main_bg2.webp);
     background-size: 450px;
     background-repeat: no-repeat;
     margin-bottom: none;
@@ -321,7 +321,7 @@
     font-weight:'500';
     font-size: '16px';
     color: #182C61;
-    background-Color: #93e8ff;
+    background-color: #93e8ff;
   
     width: fit-content;
     padding: 2px 6px;
@@ -357,7 +357,7 @@
   
  @media (max-width: 450px) {
   #cont-slide{
-    background-image: url(../img/main_bg2.png);
+    background-image: url(../img/main_bg2.webp);
     background-size: 390px;
     background-repeat: no-repeat;
     margin-bottom: none;
@@ -375,6 +375,129 @@
     }
 
   }
+
+  @media (max-width: 405px) {
+    #cont-slide{
+      background-image: url(../img/main_bg2.webp);
+      background-size: 360px;
+      background-repeat: no-repeat;
+      margin-bottom: none;
+      margin-top: 100px;
+      text-align: center;
+      background-position: top; 
+      }
+  
+      .m-screen{
+        margin-top: 260px;
+      }
+  
+      .carousel-item-left {
+        text-align: center;
+      }
+  
+    }
+
+    @media (min-width:961px) and (max-width: 991.20px) {
+      #cont-slide{
+        background-image: url(../img/main_bg2.webp);
+        background-size: 380px;
+        background-repeat: no-repeat;
+        margin-bottom: none;
+        margin-top: 100px;
+        text-align: center;
+        background-position: right; 
+        }
+        .carousel-item-left {
+          text-align: left;
+        }
+        .m-screen{
+          text-align: left;
+        }
+        .note{
+          text-align: left;
+
+        }
+        .social-icons{
+          text-align: left;
+
+        }
+        .new-scr{
+          text-align: left;
+
+        }
+    
+        .exp-size{
+          width:95%;
+          
+      }
+    
+    
+      }
+
+      @media (min-width:992.20px) and (max-width: 1199.20px) {
+        #cont-slide{
+          background-image: url(../img/main_bg2.webp);
+          background-size: 580px;
+          background-repeat: no-repeat;
+          margin-bottom: none;
+          margin-top: 100px;
+          text-align: center;
+          background-position: right; 
+          }
+
+          .carousel-item-left {
+            text-align: left;
+          }
+          .m-screen{
+            text-align: left;
+          }
+          .note{
+            text-align: left;
+  
+          }
+          .social-icons{
+            text-align: left;
+  
+          }
+          .new-scr{
+            text-align: left;
+  
+          }
+      
+      }
+
+      @media (min-width:1199.21px) and (max-width: 1409px) {
+        #cont-slide{
+          background-image: url(../img/main_bg2.webp);
+          background-size: 650px;
+          background-repeat: no-repeat;
+          margin-bottom: none;
+          margin-top: 100px;
+          text-align: center;
+          background-position: right; 
+          }
+
+          .carousel-item-left {
+            text-align: left;
+          }
+          .m-screen{
+            text-align: left;
+          }
+          .note{
+            text-align: left;
+  
+          }
+          .social-icons{
+            text-align: left;
+  
+          }
+          .new-scr{
+            text-align: left;
+  
+          }
+      
+      }
+
 
  /* @media (max-width: 670px) {
   #cont-slide{
@@ -455,8 +578,6 @@ width:100%;
     .period{
       font-weight:'500';
       font-size: '16px';
-      color: #182C61;
-      background-Color: #93e8ff;
 
       width: fit-content;
       padding: 2px 6px;

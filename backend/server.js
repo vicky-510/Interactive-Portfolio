@@ -5,7 +5,6 @@ dotenv.config();
 import cookieParser from 'cookie-parser';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
-import cors from 'cors'; // Import the cors middleware
 const port = process.env.PORT || 5000;
 import adminRoutes from './routes/adminRoutes.js';
 connectDB();
@@ -17,9 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.use(cors({
-    origin:'https://vwaran.me'
-  }));
 
 app.use('/api/admin', adminRoutes);
 

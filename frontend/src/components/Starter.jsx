@@ -32,12 +32,17 @@ function Starter() {
               </div>
               <div className="carousel-item-left">
                 {/* Add custom CSS class for left alignment */}
+                <h2 style={{ color: '#182C61', fontWeight: '700' }}>a MERN stack developer</h2>
+              </div>
+              <div className="carousel-item-left">
+                {/* Add custom CSS class for left alignment */}
                 <h2 style={{ color: '#182C61', fontWeight: '700' }}>a Frontend developer</h2>
               </div>
               <div className="carousel-item-left">
                 {/* Add custom CSS class for left alignment */}
                 <h2 style={{ color: '#182C61', fontWeight: '700' }}>a UI/UX designer</h2>
               </div>
+
               <div className="carousel-item-left">
                 {/* Add custom CSS class for left alignment */}
                 <h2 style={{ color: '#182C61', fontWeight: '700' }}>a Quick learner</h2>
@@ -52,21 +57,21 @@ function Starter() {
             </p>
             {/* Social Media Icons */}
             <div className="social-icons" data-aos="fade-up" data-aos-duration="1000">
-              <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={32} color="#182C61" style={{marginRight:'8px'}}/>
+              <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
+                <FaLinkedin size={32} color="#182C61" style={{ marginRight: '8px' }} />
               </a>
-              <a href="https://wa.me/8189950272" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp size={32} color="#182C61" style={{marginRight:'8px'}}/>
+              <a href="https://wa.me/8189950272" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
+                <FaWhatsapp size={32} color="#182C61" style={{ marginRight: '8px' }} />
               </a>
-              <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer">
-                <FaGithub size={32} color="#182C61" style={{marginRight:'8px'}}/>
+              <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
+                <FaGithub size={32} color="#182C61" style={{ marginRight: '8px' }} />
               </a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
                 <FaInstagram size={32} color="#182C61" />
               </a>
             </div>
             <br /><br /><br />
-            <h4 className="" style={{ letterSpacing: '1px' }} >
+            <h4 className="new-scr" style={{ letterSpacing: '1px' }} >
               Let&rsquo;s check out my{' '}
               <span style={{ color: 'white', borderRadius: '5px', backgroundColor: '#182C61', padding: '3.5px', fontSize: 'large', fontWeight: '600', letterSpacing: '1px' }} >
                 VOICE PORT
@@ -75,7 +80,9 @@ function Starter() {
           </div>
         </div>
       </div>
-      <br/>
+      <br />
+      <br />
+
     </div>
   );
 }
