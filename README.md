@@ -12,5 +12,4 @@
 ### Website Link: https://vwaran.me
 
 
-- #### The project is currently undergoing a dynamic and transformative upgradation phase, poised to elevate its capabilities to unprecedented heights.
 
