@@ -67,19 +67,17 @@ function Login() {
 
         <>
             <Navbar />
-            <section style={{ backgroundColor: '#ecf0f1', borderBottom: '10px solid #182C61' }} >
-                <br />
-                <br />
-                <br />
+            <section className='login-section-css'> <br /><br /><br />
+
                 <div className="wrapper">
                     <div className="logo">
                     </div>
-                    <div className="text-center mt-4 name" style={{ color: '#03A9F4', letterSpacing: '1px', fontWeight: '900', fontSize: '26px' }}>
+                    <div className="text-center mt-4 name login-div-css" >
                         FOLIO
                     </div>
                     <form className="p-3 mt-3" onSubmit={submitHandler} >
 
-                        <div className="form-field d-flex align-items-center" style={{ color: '#182C61' }}>
+                        <div className="form-field d-flex align-items-center login-common-css1" >
                             <FaMailBulk size={23} color='#45aaf2' className='icon' />
                             <input type="email" name="email" id="email" placeholder="Email"
                                 value={email}
@@ -87,7 +85,7 @@ function Login() {
                             />
                         </div>
 
-                        <div className="form-field d-flex align-items-center" style={{ color: '#182C61' }}>
+                        <div className="form-field d-flex align-items-center login-common-css1" >
                             <FaLock size={22} color='#45aaf2' className='icon' />
                             <input type="password" name="password" id="password" placeholder="Password"
                                 value={password}

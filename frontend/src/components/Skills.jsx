@@ -22,64 +22,64 @@ const Skills = () => {
     <>
     <div id="Skills" className="rem-space">
     </div>
-    <hr/>
-    <section style={{ backgroundColor: 'white', borderRadius: 'none' }} >
-      <Container style={{ backgroundColor: 'white', borderRadius: 'none' }}>
-        <div className="card" style={{ backgroundColor: 'white', padding: '4% 0%', border: 'none' }}>
+    <br/>
+    <hr className='common-hr1'/>
+    <section className='skill-bg-color' >
+      <Container className='skill-bg-color'>
+        <div className="card skill-card" >
           <div className="card-body">
-            <h2 className="text-center weight" style={{ fontSize: '28px', color: '#182C61', letterSpacing:'1px',textTransform:'none', fontWeight:'800' }}>
+            <h2 className="text-center weight skill-title" >
               SKILLS
             </h2>
-            <br />
-            <br />
+            <br /><br />
             <div className="row justify-content-center">
               <Col md="3" >
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                    <img src={html5}  className="card-img-top" alt="Skill 1" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                    <img src={html5}  className="card-img-top skill-img-all" alt="Skill 1"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     HTML
                   </h6>
                 </Card>
               </Col>
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}> 
-                   <img src={css3} className="card-img-top" alt="Skill 2" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div"> 
+                   <img src={css3} className="card-img-top skill-img-all" alt="Skill 2"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     CSS
                   </h6>
                 </Card>
               </Col>
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}> 
-                  <img src={js} className="card-img-top" alt="Skill 3" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div"> 
+                  <img src={js} className="card-img-top skill-img-all" alt="Skill 3"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     JavaScript
                   </h6>
                 </Card>
               </Col>
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                     <img src={bootstrap} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                     <img src={bootstrap} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Bootstrap
                   </h6>
                 </Card>
               </Col>
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                  <img src={react} className="card-img-top" alt="Skill 2" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                  <img src={react} className="card-img-top skill-img-all" alt="Skill 2"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     React
                   </h6>
                 </Card>
@@ -87,33 +87,33 @@ const Skills = () => {
 
 
                 <Col md="3">
-                <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}> 
-                  <img src={node} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+                <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div"> 
+                  <img src={node} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Node Js
                   </h6>
                 </Card>
               </Col>
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                     <img src={express} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                     <img src={express} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Express Js
                   </h6>
                 </Card>
               </Col>
 
               <Col md="3" >
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                     <img src={mongodb} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                     <img src={mongodb} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Mongo DB
                   </h6>
                 </Card>
@@ -122,30 +122,30 @@ const Skills = () => {
             
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}> <img src={java} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div"> <img src={java} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Java
                   </h6>
                 </Card>
               </Col>
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>   <img src={php} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">   <img src={php} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     Php
                   </h6>
                 </Card>
               </Col>
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}><img src={jquery} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div"><img src={jquery} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     JQuery
                   </h6>
                 </Card>
@@ -153,11 +153,11 @@ const Skills = () => {
              
 
               <Col md="3">
-              <Card className="mb-3" style={{ fontSize: 'x-large', color: 'white', backgroundColor: '#182C61'  }}>
-                  <div className="d-flex align-items-center justify-content-center" style={{ height: '100%', backgroundColor: '#182C61' }}>
-                     <img src={mysql} className="card-img-top" alt="Skill 4" style={{ padding: '10px', width: '120px', height: '120px' }} />
+              <Card className="mb-3 skill-inner-card" >
+                  <div className="d-flex align-items-center justify-content-center skill-common-div">
+                     <img src={mysql} className="card-img-top skill-img-all" alt="Skill 4"  />
                   </div>
-                  <h6 className="card-title text-center weight" style={{ fontSize: 'large', color: 'white', letterSpacing:'1px',textTransform:'none' }}>
+                  <h6 className="card-title text-center weight skill-title-h6" >
                     MySQL
                   </h6>
                 </Card>

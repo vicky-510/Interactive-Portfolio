@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 
 function Footer(){
+   const getFullYear = () => {
+   return new Date().getFullYear();
+
+   }
+
 
    return ( 
     <>
@@ -17,11 +22,10 @@ function Footer(){
           <div className="row align-items-center">
             <div className="col-lg-7">
               <div className="cta_content">
-                <h3 style={{fontWeight: 600, fontSize: '28px'}}>Have Any Project in Mind ?</h3>
-                {/* <p>Curabitur libero eros, efficitur sit amet sodales tincidunt, aliquet et leo sed ut nibh feugiat, auctor enim quis.</p> */}
+                <h3 className='footer-title'>Have Any Project in Mind ?</h3>
               </div>
               <div className="button_box">
-                <Link to="/Contact" className="btn btn-warning">Hire Me</Link>
+                <Link to="/Contact" className="btn btn-warning contact-font-size-css">Hire Me</Link>
               </div>
             </div>
             <div className="col-lg-5">
@@ -33,30 +37,29 @@ function Footer(){
     </section>
     <footer className="deneb_footer" >
       <div className="widget_wrapper">
-      {/* style={{ backgroundImage: "url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png)" }} */}
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 col-12">
               <div className="widget widegt_about">
                 <div className="widget_title"  >
-                <p style={{fontWeight: 900, fontSize: '26px',letterSpacing:'1px', marginBottom:'20px', marginTop:'40px'}}>FOLIO</p>
+                <p className='footer-head-title'>FOLIO</p>
                   {/* <img src={logo} className="img-fluid" alt="" style={{minHeight:'250px'}} /> */}
                 </div>
-                <p style={{color: '#182C61', fontWeight:'500', letterSpacing:'1px', marginBottom:'20px'}} id="foot-content">Expert in crafting responsive and user-friendly websites. Offering professional web development services to elevate your online presence. Let&lsquo;s collaborate and bring your vision to life. Contact me to get started.</p>
-                <ul className="social" style={{display:'inline-flex', listStyleType:'none'}}>
+                <p className='footer-content-css' id="foot-content">Expert in crafting responsive and user-friendly websites. Offering professional web development services to elevate your online presence. Let&lsquo;s collaborate and bring your vision to life. Contact me to get started.</p>
+                <ul className="social footer-common-ul" >
                   <li> 
                     <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="footer">
-                    <FaLinkedin size={26} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
+                    <FaLinkedin size={26} color="#182C61" className="footer-icon-css"/>
                    </a>
                   </li>
                   <li>
                   <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" aria-label="footer">
-                  <FaWhatsapp size={26} color="#182C61" style={{marginRight:'8px'}}/>
+                  <FaWhatsapp size={26} color="#182C61" className='footer-icon-social'/>
                   </a>
                   </li>
                   <li>
                   <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="footer">
-                   <FaGithub size={26} color="#182C61" style={{marginRight:'8px'}}/>
+                   <FaGithub size={26} color="#182C61" className='footer-icon-social'/>
                   </a>
                   </li>
                   <li>
@@ -72,26 +75,26 @@ function Footer(){
                       <div className="col-lg-4 col-md-6 col-sm-12">
             <div className="widget widget_link">
               <div className="widget_title">
-                <h4 style={{fontWeight: 600}}>Links</h4>
+                <h4 className="footer-side-title">Links</h4>
               </div>
-              <ul style={{ padding: 0, margin: 0 }}>
-                <li style={{ listStyleType: 'none' }}>
-                  <Link to="/#About" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+              <ul className='footer-link-ul-css'>
+                <li className='footer-list-none'>
+                  <Link to="/#About" className='footer-link'>
                     About
                   </Link>
                 </li>
-                <li style={{ listStyleType: 'none' }}>
-                  <Link to="/Contact" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                <li className='footer-list-none'>
+                  <Link to="/Contact" className='footer-link'>
                     Contact
                   </Link>
                 </li>
-                <li style={{ listStyleType: 'none' }}>
-                  <Link to="/#Service" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61' }}>
+                <li className='footer-list-none'>
+                  <Link to="/#Service" className='footer-link'>
                     Services
                   </Link>
                 </li>
-                <li style={{ listStyleType: 'none' }}>
-                  <Link to="/VoicePort" style={{ display: 'inline-flex', textDecoration: 'none', color: '#182C61', marginBottom: '10px' }}>
+                <li className='footer-list-none'>
+                  <Link to="/VoicePort" className='footer-voice'>
                     VoicePort
                   </Link>
                 </li>
@@ -102,16 +105,16 @@ function Footer(){
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="widget widget_contact">
                 <div className="widget_title">
-                  <h4 style={{fontWeight: 600}}>Contact Us</h4>
+                  <h4 className="footer-side-title">Contact Us</h4>
                 </div>
                 <div className="contact_info">
                   <div className="single_info">
                  
                     <div className="info">
                     <div className="icon">
-                    <FaPhoneAlt size={17} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
+                    <FaPhoneAlt size={17} color="#182C61" className="footer-icon-css"/>
                     </div>
-                      <p><a href="tel:+919246147999" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }} aria-label="footer">
+                      <p><a href="tel:+918189950272" className='footer-side-text' aria-label="footer">
                         +91 8189950272
                       </a>
                       </p>
@@ -119,13 +122,13 @@ function Footer(){
                   </div>
                   <div className="single_info">
                     <div className="icon">
-                    <FaMailBulk size={20} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
+                    <FaMailBulk size={20} color="#182C61" className="footer-icon-css"/>
                     </div>
                     
                     <div className="info">
-                    <p><a href="mailto:vignesh510510@gmail.com" style={{ listStyleType: 'none', textDecoration: 'none', color: 'inherit' }} aria-label="footer">vignesh510510@gmail.com</a></p>
+                    <p><a href="mailto:vignesh510510@gmail.com" className='footer-side-text' aria-label="footer">vignesh510510@gmail.com</a></p>
                     <div className="icon">
-                    <FaMap size={20} color="#182C61" style={{marginRight:'8px',float:'left'}}/>
+                    <FaMap size={20} color="#182C61" className="footer-icon-css"/>
                     </div>
 
                      
@@ -135,8 +138,8 @@ function Footer(){
                     <div className="icon">
                       <i className="fas fa-map-marker-alt"></i>
                     </div>
-                    <div className="info">
-                      <p> K.pudur,<span> Madurai.</span></p>
+                    <div className="info footer-info-address">
+                      <p> K.Pudur,<span> Madurai.</span></p>
                     </div>
                   </div>
                 </div>
@@ -151,7 +154,7 @@ function Footer(){
             <div className="col-lg-12">
               <div className="copyright_text">
                 <br/>
-                <p style={{fontWeight: 500, letterSpacing:'1px'}} id="foot-copy">Copyright &copy; 2023 All rights reserved.</p>
+                <p className='foot-copy-right' id="foot-copy">Copyright &copy; {getFullYear()} All rights reserved.</p>
               </div>
               <br/>
               <br/>
@@ -161,6 +164,34 @@ function Footer(){
       </div>
     </footer>
     </>
+     );
+
+
+    }
+    
+    export default Footer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 // <footer class="footer py-4" style={{color: '#182C61'}}>
 //   <div class="container">
@@ -169,13 +200,13 @@ function Footer(){
 //         <h4 style={{fontWeight: 900, fontSize: '28px'}}>PORTFOLIO</h4>
 //         <div className="social-icons">
 //               <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-//                 <FaLinkedin size={24} color="#182C61" style={{marginRight:'8px'}}/>
+//                 <FaLinkedin size={24} color="#182C61" className='footer-icon-social'/>
 //               </a>
 //               <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
-//                 <FaWhatsapp size={24} color="#182C61" style={{marginRight:'8px'}}/>
+//                 <FaWhatsapp size={24} color="#182C61" className='footer-icon-social'/>
 //               </a>
 //               <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-//                 <FaGithub size={24} color="#182C61" style={{marginRight:'8px'}}/>
+//                 <FaGithub size={24} color="#182C61" className='footer-icon-social'/>
 //               </a>
 //               <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
 //                 <FaInstagram size={24} color="#182C61" />
@@ -207,12 +238,7 @@ function Footer(){
 //   <br/>
 //   <br/>
 //   <div class="text-center py-3" style={{letterSpacing:'1px'}}>
-//     <p style={{fontWeight: 600}}>&copy; 2023 Vigneshwaran M. All rights reserved.</p>
+//     <p className="footer-side-title">&copy; 2023 Vigneshwaran M. All rights reserved.</p>
 //   </div>
 // </footer>
-   );
-
-
-}
-
-export default Footer;
+  

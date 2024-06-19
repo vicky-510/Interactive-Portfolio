@@ -4,16 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram } from 'react-icons/fa';
+import { BsAlignBottom } from 'react-icons/bs';
 
 function Starter() {
 
 
   return (
     <div className="container-fluid bg-change1" id='Home'>
-      <div className="row">
+      <div className="row starter-BSpace">
         <div className="col-12">
           <div className="container text-left text-large mx-auto" id="cont-slide">
-            <h1 id="t-top" style={{ fontWeight: '700', color: '#182C61' }} className="m-screen" data-aos="fade-up" data-aos-duration="1000">
+            <h1 id="t-top"  className="m-screen starter-1" 
+            // data-aos="fade-up" data-aos-duration="1000"
+            >
               Hello, I&rsquo;m
             </h1>
             {/* Carousel Start */}
@@ -26,62 +29,62 @@ function Starter() {
               showArrows={false}
               showIndicators={false}
             >
-              <div className="carousel-item-left" data-aos="fade-up" data-aos-duration="1000">
-                {/* Add custom CSS class for left alignment */}
-                <h2 style={{ color: '#182C61', fontWeight: '700' }}>Vigneshwaran M</h2>
+              <div className="carousel-item-left" 
+              // data-aos="fade-up" data-aos-duration="1000"
+              >
+                <h2 className="starter-1">Vigneshwaran M</h2>
               </div>
               <div className="carousel-item-left">
-                {/* Add custom CSS class for left alignment */}
-                <h2 style={{ color: '#182C61', fontWeight: '700' }}>a MERN stack developer</h2>
+                <h2 className="starter-1">a MERN stack developer</h2>
               </div>
               <div className="carousel-item-left">
-                {/* Add custom CSS class for left alignment */}
-                <h2 style={{ color: '#182C61', fontWeight: '700' }}>a Frontend developer</h2>
+                <h2 className="starter-1">a Full developer</h2>
               </div>
-              <div className="carousel-item-left">
-                {/* Add custom CSS class for left alignment */}
-                <h2 style={{ color: '#182C61', fontWeight: '700' }}>a UI/UX designer</h2>
-              </div>
+              {/* <div className="carousel-item-left">
+                <h2 className="starter-1">a UI/UX designer</h2>
+              </div> */}
 
               <div className="carousel-item-left">
-                {/* Add custom CSS class for left alignment */}
-                <h2 style={{ color: '#182C61', fontWeight: '700' }}>a Quick learner</h2>
+                <h2 className="starter-1">a Quick learner</h2>
               </div>
             </Carousel>
             {/* Carousel End */}
-            <p className="note" style={{ fontWeight: '700', fontSize: 'large' }} data-aos="fade-up" data-aos-duration="1000">
+            <p className="note starter-note" 
+            // data-aos="fade-up" data-aos-duration="1000"
+            >
               Welcome to my{' '}
-              <a href="/VoicePort" style={{ color: '#fa8231', textDecoration: 'none', fontWeight: '600' }}>
+              <a href="/VoicePort" className='starter-port'>
                 Portfolio Website.
               </a>
             </p>
             {/* Social Media Icons */}
-            <div className="social-icons" data-aos="fade-up" data-aos-duration="1000">
+            <div className="social-icons starter-social-icons" 
+            // data-aos="fade-up" data-aos-duration="1000"
+            >
               <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
-                <FaLinkedin size={32} color="#182C61" style={{ marginRight: '8px' }} />
+                <FaLinkedin size={32} color="#182C61" className='starter-right' />
               </a>
               <a href="https://wa.me/8189950272" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
-                <FaWhatsapp size={32} color="#182C61" style={{ marginRight: '8px' }} />
+                <FaWhatsapp size={32} color="#182C61" className='starter-right' />
               </a>
               <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
-                <FaGithub size={32} color="#182C61" style={{ marginRight: '8px' }} />
+                <FaGithub size={32} color="#182C61" className='starter-right' />
               </a>
               <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
                 <FaInstagram size={32} color="#182C61" />
               </a>
             </div>
-            <br /><br /><br />
-            <h4 className="new-scr" style={{ letterSpacing: '1px' }} >
+         
+            <h4 className="new-scr starter-Lspacing" >
               Let&rsquo;s check out my{' '}
-              <span style={{ color: 'white', borderRadius: '5px', backgroundColor: '#182C61', padding: '3.5px', fontSize: 'large', fontWeight: '600', letterSpacing: '1px' }} >
+              <span className='starter-voice' >
                 VOICE PORT
               </span>{' '}
             </h4>
           </div>
         </div>
       </div>
-      <br />
-      <br />
+     
 
     </div>
   );

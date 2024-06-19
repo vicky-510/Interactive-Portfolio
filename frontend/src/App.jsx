@@ -18,6 +18,7 @@ const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
         <ToastContainer />
 
         <Routes>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/VoicePort" element={<VoicePort />} />

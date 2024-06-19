@@ -17,17 +17,10 @@ import Navbar from '../components/Navbar'
   return (
     <>
     <Navbar />
-  <div style={{marginTop:'80px',backgroundColor:'#182C61'}}>
-    <br/>
-    <br/>
-    <br/>
+  <div className='voice-margin-space'>
+   <div className='voice-margin-space1'>
   <WebSpeech />
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+  </div>
   </div>
 
   <Footer />

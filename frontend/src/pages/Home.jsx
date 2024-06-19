@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import Starter from '../components/Starter'
 import Service from '../components/Service'
 import Experience from '../components/Experience'
+// import Demo from '../components/Demo'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import About from '../components/About'
@@ -38,7 +39,7 @@ import { HashLink } from "react-router-hash-link";
 
 
   
- 
+    {/* <Demo /> */}
     <Experience />
     
   
