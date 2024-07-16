@@ -52,7 +52,7 @@ const Experience = () => {
               <hr className='common-hr' />
             </div>
             <div>
-              <p className='common-letterSpace'><strong className='star-design-1'>★</strong>Developing dynamic user interfaces with Angular and build server-side applications using Node.js.</p>
+              <p className='common-letterSpace'><strong className='star-design-1'>★</strong>Developing dynamic user interfaces with Angular and building server-side applications using Node.js.</p>
               <p className='common-letterSpace'><strong className='star-design-1'>★</strong> Design and manage MySQL databases, writing optimized SQL queries for efficient data handling.</p>
               <p className='common-letterSpace'><strong className='star-design-1'>★</strong> Collaborate with cross-functional teams and senior developers, to deliver high-quality applications.</p>
               <p className='common-letterSpace2'><strong className='star-design-1'>★</strong> Skills:  
