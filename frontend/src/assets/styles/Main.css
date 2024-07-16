@@ -394,11 +394,31 @@
 
 }
 
+.organiz-exp-3{
+  font-weight: 500;
+  font-size: 18px;
+  color: #182C61;
+  background-color: #33d9b2;
+  width: fit-content;
+  padding: 4px 6px;
+  border-top-left-radius:7px;
+  border-bottom-right-radius: 7px;
+  letter-spacing: 1px;
+
+}
+
+.exp-period-3{
+  font-size: 15px;
+  background-color: #33d9b2;
+  padding: 5px;
+}
+
 .exp-period-1{
   font-size: 15px;
   background-color: #FFC312;
   padding: 5px;
 }
+
 .exp-period-2{
   font-size: 15px;
   background-color: greenyellow;
@@ -428,6 +448,9 @@
 }
 .star-design-2{
   color: greenyellow;
+ }
+ .star-design-3{
+  color: #33d9b2;
  }
 
 .skill-2_1{

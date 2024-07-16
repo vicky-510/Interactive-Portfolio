@@ -22,7 +22,7 @@ const About = () => {
           <img className="round" src={vignesh} alt="user" width="160px"  />
           <h3 className='about-name'>Vigneshwaran M</h3>
           {/* <h6 className='about-place'>Madurai, India</h6> */}
-          <p className='about-role'>MERN stack developer</p>
+          <p className='about-role'>Full stack developer <br/>(MERN/MEAN)</p>
           <div className="buttons">
             <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" className='about-decor-none' aria-label="About">
               <Button className="primary about-btn-1" >

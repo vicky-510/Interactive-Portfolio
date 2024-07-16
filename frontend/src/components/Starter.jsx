@@ -35,10 +35,10 @@ function Starter() {
                 <h2 className="starter-1">Vigneshwaran M</h2>
               </div>
               <div className="carousel-item-left">
-                <h2 className="starter-1">a MERN stack developer</h2>
+                <h2 className="starter-1">a Full-stack developer</h2>
               </div>
               <div className="carousel-item-left">
-                <h2 className="starter-1">a Full developer</h2>
+                <h2 className="starter-1">a Dedicated coder</h2>
               </div>
               {/* <div className="carousel-item-left">
                 <h2 className="starter-1">a UI/UX designer</h2>

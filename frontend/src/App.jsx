@@ -13,7 +13,7 @@ const Profile = lazy(() => import('./pages/Profile'));
 const Contact = lazy(() => import('./pages/Contacts'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
-
+// const Demo = lazy(() => import('./components/Demo'));
 
 
 import { ToastContainer } from 'react-toastify';
@@ -35,14 +35,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/VoicePort" element={<VoicePort />} />
           <Route path="/Contact" element={<Contact />} />
-
+          {/* <Route path="/demo" element={<Demo />} /> */}
 
           {/* Private Routes */}
           <Route path='' element={<PrivateRoute />} >
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
-
           </Route>
         </Routes>
       </Suspense>
