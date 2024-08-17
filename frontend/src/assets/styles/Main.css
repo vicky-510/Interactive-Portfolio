@@ -754,9 +754,16 @@
   color: white;
   background-color: #182C61;
 }
+.skill-inner-card:hover{
+  font-size: x-large;
+  color: white;
+  background-color: #182C61;
+  border-radius: 10px;
+}
 .skill-common-div{
   height: 100%;
   background-color: #182C61;
+  border-radius: 5px;
 }
 .skill-img-all{
   padding: 10px;

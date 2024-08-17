@@ -32,7 +32,6 @@ import { HashLink } from "react-router-hash-link";
   return (
     <>
     <Navbar />
-
     <Starter />
     {/* <WebSpeech /> */}
     <Projects />

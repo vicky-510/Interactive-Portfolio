@@ -37,6 +37,8 @@ function Projects() {
             <div className="col project-card-hover" >
               <div className="card h-36 shadow-lg ">
                 <img
+                 rel="preload"
+                 as="image" 
                   src={pro1}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -86,6 +88,8 @@ function Projects() {
               <div className="card h-36 shadow-lg ">
 
                 <img
+                 rel="preload"
+                 as="image" 
                   src={pro2}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -139,10 +143,12 @@ function Projects() {
 
 
             {/* Card 3 */}
-            <div className="col project-card-hover">
+            {/* <div className="col project-card-hover">
               <div className="card h-36 shadow-lg ">
 
                 <img
+                 rel="preload"
+                  as="image" 
                   src={pro5}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -188,7 +194,7 @@ function Projects() {
                       <button className="mt-4 btn  btn-lg w-100 project-btn-view">View Project</button> </a>                </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
 
 
@@ -196,6 +202,8 @@ function Projects() {
             <div className="col project-card-hover">
               <div className="card h-48 shadow-lg ">
                 <img
+                 rel="preload"
+                 as="image" 
                   src={pro3}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -245,6 +253,8 @@ function Projects() {
               <div className="card h-36 shadow-lg ">
 
                 <img
+                 rel="preload"
+                 as="image" 
                   src={pro4}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -291,6 +301,8 @@ function Projects() {
               <div className="card h-36 shadow-lg ">
 
                 <img
+                  rel="preload"
+                  as="image" 
                   src={pro6}
                   className="card-img-top rounded-xl border-bottom"
                   alt="Colors"

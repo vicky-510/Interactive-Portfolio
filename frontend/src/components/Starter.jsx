@@ -14,7 +14,7 @@ function Starter() {
       <div className="row starter-BSpace">
         <div className="col-12">
           <div className="container text-left text-large mx-auto" id="cont-slide">
-            <h1 id="t-top"  className="m-screen starter-1" 
+            <h1 id="t-top" className="m-screen starter-1"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               Hello, I&rsquo;m
@@ -29,13 +29,13 @@ function Starter() {
               showArrows={false}
               showIndicators={false}
             >
-              <div className="carousel-item-left" 
+              <div className="carousel-item-left"
               // data-aos="fade-up" data-aos-duration="1000"
               >
                 <h2 className="starter-1">Vigneshwaran M</h2>
               </div>
               <div className="carousel-item-left">
-                <h2 className="starter-1">a Full-stack developer</h2>
+                <h2 className="starter-1">a Software Engineer</h2>
               </div>
               <div className="carousel-item-left">
                 <h2 className="starter-1">a Dedicated coder</h2>
@@ -49,7 +49,7 @@ function Starter() {
               </div>
             </Carousel>
             {/* Carousel End */}
-            <p className="note starter-note" 
+            <p className="note starter-note"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               Welcome to my{' '}
@@ -58,7 +58,7 @@ function Starter() {
               </a>
             </p>
             {/* Social Media Icons */}
-            <div className="social-icons starter-social-icons" 
+            <div className="social-icons starter-social-icons"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
@@ -74,7 +74,7 @@ function Starter() {
                 <FaInstagram size={32} color="#182C61" />
               </a>
             </div>
-         
+
             <h4 className="new-scr starter-Lspacing" >
               Let&rsquo;s check out my{' '}
               <span className='starter-voice' >
@@ -84,7 +84,7 @@ function Starter() {
           </div>
         </div>
       </div>
-     
+
 
     </div>
   );
