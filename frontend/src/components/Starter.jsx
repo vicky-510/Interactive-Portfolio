@@ -5,16 +5,19 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram } from 'react-icons/fa';
 import { BsAlignBottom } from 'react-icons/bs';
+import { SiLeetcode } from "react-icons/si";
+
 
 function Starter() {
 
 
   return (
     <div className="container-fluid bg-change1" id='Home'>
-      <div className="row starter-BSpace">
+      <div className="row pt-5 pb-5  mt-5">
+      {/* starter-BSpace */}
         <div className="col-12">
           <div className="container text-left text-large mx-auto" id="cont-slide">
-            <h1 id="t-top"  className="m-screen starter-1" 
+            <h1 id="t-top" className="m-screen starter-1"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               Hello, I&rsquo;m
@@ -29,13 +32,13 @@ function Starter() {
               showArrows={false}
               showIndicators={false}
             >
-              <div className="carousel-item-left" 
+              <div className="carousel-item-left"
               // data-aos="fade-up" data-aos-duration="1000"
               >
                 <h2 className="starter-1">Vigneshwaran M</h2>
               </div>
               <div className="carousel-item-left">
-                <h2 className="starter-1">a Full-stack developer</h2>
+                <h2 className="starter-1">a Software Engineer</h2>
               </div>
               <div className="carousel-item-left">
                 <h2 className="starter-1">a Dedicated coder</h2>
@@ -49,7 +52,7 @@ function Starter() {
               </div>
             </Carousel>
             {/* Carousel End */}
-            <p className="note starter-note" 
+            <p className="note starter-note"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               Welcome to my{' '}
@@ -58,7 +61,7 @@ function Starter() {
               </a>
             </p>
             {/* Social Media Icons */}
-            <div className="social-icons starter-social-icons" 
+            <div className="social-icons starter-social-icons"
             // data-aos="fade-up" data-aos-duration="1000"
             >
               <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
@@ -70,11 +73,15 @@ function Starter() {
               <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
                 <FaGithub size={32} color="#182C61" className='starter-right' />
               </a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
+              {/* <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Go to Homepage">
                 <FaInstagram size={32} color="#182C61" />
+              </a> */}
+              <a href="https://leetcode.com/u/vicky510/" target="_blank" rel="noopener noreferrer" aria-label="footer">
+                <SiLeetcode size={32} color="#182C61" />
               </a>
+
             </div>
-         
+
             <h4 className="new-scr starter-Lspacing" >
               Let&rsquo;s check out my{' '}
               <span className='starter-voice' >
@@ -84,7 +91,7 @@ function Starter() {
           </div>
         </div>
       </div>
-     
+
 
     </div>
   );

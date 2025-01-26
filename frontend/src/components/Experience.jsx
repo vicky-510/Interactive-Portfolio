@@ -41,7 +41,7 @@ const Experience = () => {
             <div className="item" >
               <div className="row">
                 <div className="col-md-6 " >
-                  <h3 className='exp-title'>Junior Developer</h3>
+                  <h3 className='exp-title'>Jr. Software Engineer</h3>
                   <h4 className="organization organiz-exp-1" >MBF Digital Production Services Private Ltd, Chennai</h4>
 
                 </div>
