@@ -35,7 +35,7 @@
   
     color: #182C61; 
     font-weight: 600;
-    padding-right: 28px; 
+    padding-right: 30px; 
     padding-top:0px;
     letter-spacing:1px ;
     font-size:18px;
@@ -71,13 +71,13 @@
 
     #cont-slide{
         letter-spacing: 1.5px; color: #182C61;
-        margin-top: 110px; 
-        margin-bottom: 20px; 
+        /* margin-top: 110px;  */
+        /* margin-bottom: 20px;  */
         background-image: url(../img/main_bg2.webp);
         background-size: 720px;
         background-repeat: no-repeat;
         background-position: right;
-        padding: 9% 0;
+        padding: 8% 0;
    } 
  
   .top-side{
@@ -835,6 +835,7 @@
   letter-spacing: 1px;
   margin-bottom: 20px;
   margin-top: 40px;
+  color:#182C61;
 }
 .footer-content-css{
   color: #182C61;
@@ -864,6 +865,12 @@
   mix-blend-mode: multiply;
   background-color: rgba(255, 255, 255, 0.5);
 }
+/* footer logo
+navbars-img-css1{
+  max-height: 70px;
+  mix-blend-mode: multiply;
+  background-color: rgba(255, 255, 255, 0.5);
+} */
 .navbars-btn-1{
   padding: 15px;
   font-size: 28px;
@@ -1385,6 +1392,11 @@ padding-bottom: 20px;
       
       }
 
+    @media (min-width: 1600px){
+      #cont-slide{
+       padding: 5% 0;
+        }
+    }
 
  /* @media (max-width: 670px) {
   #cont-slide{

@@ -26,8 +26,8 @@ function Projects() {
         <hr className='common-hr1' />
         <br />
       </div>
-      <div className="min-vh-100 bg-gradient-to-tr from-red-300 to-yellow-200 d-flex justify-content-center align-items-center py-5" >
-
+      <div className=" bg-gradient-to-tr from-red-300 to-yellow-200 d-flex justify-content-center align-items-center py-5" >
+      {/* min-vh-100 */}
         <div className="container-md">
           <h2 className='text-center project-title'  >PROJECTS</h2>
 

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { HashLink } from "react-router-hash-link";
-import logo from '../assets/img/logo_white.gif';
+import logo from '../assets/img/logo_waran.gif';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BsFillHouseFill, BsFillInfoSquareFill } from "react-icons/bs";
 import { FaThList,FaSignInAlt } from "react-icons/fa";
@@ -80,10 +80,10 @@ const Navbar = () => {
               </li>
 
 
-              <li className="nav-item nav-common-btn-css">
+              {/* <li className="nav-item nav-common-btn-css">
                 <HashLink to="/login" className="link-font-size navbars-icon-css9">Login<FaSignInAlt size={22}  className='navbars-icon-css10' />
                 </HashLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

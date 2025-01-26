@@ -3,6 +3,7 @@ import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram, FaMailBulk, FaMap, FaPhoneAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { SiLeetcode } from "react-icons/si";
 
 
 function Footer(){
@@ -42,7 +43,7 @@ function Footer(){
             <div className="col-lg-4 col-md-6 col-12">
               <div className="widget widegt_about">
                 <div className="widget_title"  >
-                <p className='footer-head-title'>FOLIO</p>
+                <p className='footer-head-title'>Vwaran</p>
                   {/* <img src={logo} className="img-fluid" alt="" style={{minHeight:'250px'}} /> */}
                 </div>
                 <p className='footer-content-css' id="foot-content">Expert in crafting responsive and user-friendly websites. Offering professional web development services to elevate your online presence. Let&lsquo;s collaborate and bring your vision to life. Contact me to get started.</p>
@@ -63,10 +64,15 @@ function Footer(){
                   </a>
                   </li>
                   <li>
+                  <a href="https://leetcode.com/u/vicky510/" target="_blank" rel="noopener noreferrer" aria-label="footer">
+                   <SiLeetcode size={26} color="#182C61"  />
+                  </a>
+                  </li>
+                   {/* <li>
                   <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="footer">
                    <FaInstagram size={26} color="#182C61"  />
                   </a>
-                  </li>
+                  </li> */}
                 </ul>
                 <br/><br/><br/>
               </div>
