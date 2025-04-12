@@ -46,7 +46,7 @@ function Service() {
                     
                     <div className="card-body">
                         <h3 className="card-title text-white service-title-fw" >Ecommerce Development</h3>
-                        <p className="card-text service-desc-color" >Specializing in secure and scalable ecommerce platforms, I enable successful online product sales. Trust in my expertise to build your ideal online store.</p>
+                        <p className="card-text service-desc-color" > I specialize in building secure, scalable eCommerce platforms that enhance online sales and provide a seamless shopping experience.</p>
                         <br/>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ function Service() {
                  
                     <div className="card-body">
                         <h3 className="card-title text-white service-title-fw"  >CMS Development</h3>
-                        <p className="card-text service-desc-color" >Empower your website with our CMS development services for seamless content management and updates. Stay in control with effortless website content management.</p>
+                        <p className="card-text service-desc-color mb-2 pb-4" >Empower your website with our CMS solutions for smooth, hassle-free content updates and management.</p>
                         <br/>
                 </div>
               </div>

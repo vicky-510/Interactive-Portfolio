@@ -8,6 +8,7 @@ import { FaDownload } from "react-icons/fa";
 
 
 const About = () => {
+const resumeLink = 'https://drive.google.com/file/d/12QBfYCkkbNPl4JGVmqc5RAbS9d5r1DwO/view';
 
   return (
     <>
@@ -56,7 +57,7 @@ const About = () => {
               <Button className="btn btn-warning mx-auto d-block about-btn-resume"  >Download Resume  </Button>
             </a> */}
 
-            <a href="https://drive.google.com/file/d/10eSQnPs8AwvCMsdszC3_-ieRzUHw9UuH/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+            <a href={resumeLink} target="_blank" rel="noopener noreferrer"
              className='about-decor-none' aria-label="About" download>
               <Button className="btn btn-warning mx-auto d-block about-btn-resume"  >Download CV <FaDownload size={17} className='about-btn-css-icon'/>
               </Button>

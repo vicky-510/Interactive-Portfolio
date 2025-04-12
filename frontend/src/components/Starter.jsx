@@ -12,54 +12,34 @@ function Starter() {
 
 
   return (
-    <div className="container-fluid bg-change1" id='Home'>
-      <div className="row pt-5 pb-5  mt-5">
-      {/* starter-BSpace */}
+    <div className="container-fluid bg-change1 show-space-effect" id='Home'>
+      <div className="row pt-5 pb-5 mt-5 ">
+        {/* starter-BSpace */}
         <div className="col-12">
-          <div className="container text-left text-large mx-auto" id="cont-slide">
+          <div className="container text-left text-large mx-auto " id="cont-slide">
             <h1 id="t-top" className="m-screen starter-1"
             // data-aos="fade-up" data-aos-duration="1000"
             >
-              Hello, I&rsquo;m
+              Hey there!
             </h1>
-            {/* Carousel Start */}
-            <Carousel
-              showThumbs={false}
-              autoPlay
-              infiniteLoop
-              interval={3000}
-              showStatus={false}
-              showArrows={false}
-              showIndicators={false}
-            >
-              <div className="carousel-item-left"
+
+            <div className='css-slider-align'>
+              <h2 aria-label="Hi! I'm a Vigneshwaran M">
+                <span className='css-inside-align'>I&rsquo;m&nbsp;</span>
+                <span className="typewriter"></span>
+              </h2>
+            </div>
+            <div className='css-slider-align'>
+              <p className="note starter-note"
               // data-aos="fade-up" data-aos-duration="1000"
               >
-                <h2 className="starter-1">Vigneshwaran M</h2>
-              </div>
-              <div className="carousel-item-left">
-                <h2 className="starter-1">a Software Engineer</h2>
-              </div>
-              <div className="carousel-item-left">
-                <h2 className="starter-1">a Dedicated coder</h2>
-              </div>
-              {/* <div className="carousel-item-left">
-                <h2 className="starter-1">a UI/UX designer</h2>
-              </div> */}
+                Welcome to my{' '}
+                <a href="/VoicePort" className='starter-port'>
+                world of code.
+                </a>
+              </p>
+            </div>
 
-              <div className="carousel-item-left">
-                <h2 className="starter-1">a Quick learner</h2>
-              </div>
-            </Carousel>
-            {/* Carousel End */}
-            <p className="note starter-note"
-            // data-aos="fade-up" data-aos-duration="1000"
-            >
-              Welcome to my{' '}
-              <a href="/VoicePort" className='starter-port'>
-                Portfolio Website.
-              </a>
-            </p>
             {/* Social Media Icons */}
             <div className="social-icons starter-social-icons"
             // data-aos="fade-up" data-aos-duration="1000"
@@ -83,11 +63,15 @@ function Starter() {
             </div>
 
             <h4 className="new-scr starter-Lspacing" >
-              Let&rsquo;s check out my{' '}
+              Transforming ideas into 
+              {' '}
               <span className='starter-voice' >
-                VOICE PORT
+              {'< Code />'}
               </span>{' '}
             </h4>
+
+
+
           </div>
         </div>
       </div>

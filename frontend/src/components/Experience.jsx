@@ -18,9 +18,6 @@ const Experience = () => {
   const cert_hide_icon = (<PiCertificateDuotone size={25}  className='icon cert_css1' />);
 
 
-
-
-
   return (
     <>
       <div id="Experience" className="rem-space">
@@ -41,7 +38,7 @@ const Experience = () => {
             <div className="item" >
               <div className="row">
                 <div className="col-md-6 " >
-                  <h3 className='exp-title'>Jr. Software Engineer</h3>
+                  <h3 className='exp-title' >Jr. Software Engineer</h3>
                   <h4 className="organization organiz-exp-1" >MBF Digital Production Services Private Ltd, Chennai</h4>
 
                 </div>
@@ -58,8 +55,9 @@ const Experience = () => {
               <p className='common-letterSpace2'><strong className='star-design-1'>★</strong> Skills:  
                 <span className='skill-2_1'>Angular </span>
                 <span className='skill-2_2'>Node.js </span>
-                <span className='skill-2_3'>React.js</span>
+                {/* <span className='skill-2_3'>React.js</span> */}
                 <span className='skill-2_3'>MySQL</span>
+                <span className='skill-2_3'>MongoDB</span>
 
 
               </p>
