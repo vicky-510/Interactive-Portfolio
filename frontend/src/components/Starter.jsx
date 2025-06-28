@@ -1,10 +1,11 @@
 // import React from "react";
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram } from 'react-icons/fa';
-import { BsAlignBottom } from 'react-icons/bs';
+import { FaLinkedin, FaWhatsapp, FaGithub,  } from 'react-icons/fa';
+//FaInstagram
+// import { BsAlignBottom } from 'react-icons/bs';
 import { SiLeetcode } from "react-icons/si";
 
 
