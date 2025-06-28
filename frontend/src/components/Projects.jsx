@@ -5,8 +5,10 @@ import pro1 from '../assets/img/pro_1.webp';
 import pro2 from '../assets/img/pro_2.webp';
 import pro3 from '../assets/img/pro_3.webp';
 import pro4 from '../assets/img/pro_4.webp';
-import pro5 from '../assets/img/pro_5.webp';
+// import pro5 from '../assets/img/pro_5.webp';
 import pro6 from '../assets/img/pro_6.webp';
+import pro7 from '../assets/img/pro_7.webp';
+
 
 import { BsCalendar2CheckFill } from 'react-icons/bs';
 import { PiLightningFill } from 'react-icons/pi';
@@ -38,7 +40,6 @@ function Projects() {
               <div className="card h-36 shadow-lg ">
                 <img
                  rel="preload"
-                 as="image" 
                   src={pro1}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -89,7 +90,6 @@ function Projects() {
 
                 <img
                  rel="preload"
-                 as="image" 
                   src={pro2}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -148,8 +148,7 @@ function Projects() {
 
                 <img
                  rel="preload"
-                  as="image" 
-                  src={pro5}
+                   src={pro5}
                   className="card-img-top rounded-xl"
                   alt="Colors"
 
@@ -203,7 +202,6 @@ function Projects() {
               <div className="card h-48 shadow-lg ">
                 <img
                  rel="preload"
-                 as="image" 
                   src={pro3}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -254,7 +252,6 @@ function Projects() {
 
                 <img
                  rel="preload"
-                 as="image" 
                   src={pro4}
                   className="card-img-top rounded-xl"
                   alt="Colors"
@@ -290,7 +287,7 @@ function Projects() {
                     </div>
                     <br />
                     <br />
-                    <a href="https://github.com/vicky-510/JsonFetchMaster" target="_blank" rel="noopener noreferrer" >
+                    <a href="https://github.com/vicky-510/Json-Fetch-Master" target="_blank" rel="noopener noreferrer" >
                       <button className="mt-4 btn  btn-lg w-100 project-btn-view">View Project</button> </a>                </div>
                 </div>
               </div>
@@ -302,8 +299,7 @@ function Projects() {
 
                 <img
                   rel="preload"
-                  as="image" 
-                  src={pro6}
+                   src={pro6}
                   className="card-img-top rounded-xl border-bottom"
                   alt="Colors"
 
@@ -339,7 +335,58 @@ function Projects() {
                     </div>
                     <br />
                     <br />
-                    <a href="https://github.com/vicky-510/Mern_crud" target="_blank" rel="noopener noreferrer" >
+                    <a href="https://github.com/vicky-510/Student-management-system-crud" target="_blank" rel="noopener noreferrer" >
+                      <button className="mt-4 btn  btn-lg w-100 project-btn-view">View Project</button> </a>                </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 7 */}
+
+              <div className="col project-card-hover">
+              <div className="card h-36 shadow-lg ">
+
+                <img
+                  rel="preload"
+                   src={pro7}
+                  className="card-img-top rounded-xl border-bottom"
+                  alt="Colors"
+
+                />
+                <div className="position-relative"></div>
+                <div className="card-body py-2">
+                  <h1 className="card-text text-dark text-2xl font-bold cursor-pointer project-title-all" >
+                    Domain Insight
+                  </h1>
+                  <div className="my-4">
+                    <div className="d-flex align-items-center">
+                      <BsCalendar2CheckFill size={25} color="#182C61" className="project-icon-all" />
+
+
+                      <p className='project-letter-space project-size-text' >May 2025 - June 2025</p>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <PiLightningFill size={25} color="#182C61" className="project-icon-all" />
+
+                      <p className='project-letter-space project-size-text' >Web application</p>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <IoIosApps size={35} color="#182C61" style={{ marginBottom: '50px', marginRight: '0px' }} />
+
+                      <p> <span className='project-skill-desc'>Angular</span>
+                        <span className='project-skill-desc'>Node JS</span>
+                        <span className='project-skill-desc'>Typescript</span>
+                        <br /><br />
+                        <span className='project-skill-desc'>WHOIS XML API</span> 
+                        <span className='project-skill-desc'>DNS Lookup API</span> 
+
+
+                      </p>
+
+                    </div>
+                    <br />
+                    <br />
+                    <a href="https://github.com/vicky-510/vDomain-insight-frontend" target="_blank" rel="noopener noreferrer" >
                       <button className="mt-4 btn  btn-lg w-100 project-btn-view">View Project</button> </a>                </div>
                 </div>
               </div>
@@ -356,6 +403,7 @@ function Projects() {
 }
 
 export default Projects;
+
 
 
 

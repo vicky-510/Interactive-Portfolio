@@ -12,6 +12,7 @@ const Register = lazy(() => import('./pages/Register'));
 const Profile = lazy(() => import('./pages/Profile'));
 const Contact = lazy(() => import('./pages/Contacts'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
+const BlogRole = lazy(() => import('./pages/BlogRole'));
 const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
 // const Demo = lazy(() => import('./components/Demo'));
 
@@ -35,6 +36,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/VoicePort" element={<VoicePort />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/blog/why-i-chose-fullstack-development" element={<BlogRole />} />
+
           {/* <Route path="/demo" element={<Demo />} /> */}
 
           {/* Private Routes */}

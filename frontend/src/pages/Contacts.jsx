@@ -109,7 +109,7 @@ const Contacts = () => {
             <Row>
               <Col lg="8">
                 <div className="contact-box p-4 contact-div-body" ><br />
-                  <h5>Fields marked with '*' are required.</h5>
+                  <h5>Fields marked with &#39;*&#39; are required.</h5>
                   <Form onSubmit={handleFormSubmit} >
                     <Row>
 

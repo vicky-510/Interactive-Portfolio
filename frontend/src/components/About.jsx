@@ -20,7 +20,8 @@ const resumeLink = 'https://drive.google.com/file/d/12QBfYCkkbNPl4JGVmqc5RAbS9d5
       
         <Container className="card-container about-container-top"   >
           <span className="pro" >PROFILE</span>
-          <img className="round"  rel="preload" as="image" src={vignesh} alt="user" width="160px"  />
+          <img className="round"  rel="preload" src={vignesh} alt="user" width="160px"  /> 
+          {/* as="image"  */}
           <h3 className='about-name'>Vigneshwaran M</h3>
           {/* <h6 className='about-place'>Madurai, India</h6> */}
           <p className='about-role'>Jr. Software Engineer <br/>(MERN/MEAN)</p>
