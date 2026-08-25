@@ -4,8 +4,7 @@ dotenv.config();
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
-import mongoose from 'mongoose';
-import connectDB, { lastConnectError } from './config/db.js';
+import connectDB from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
 
 const port = process.env.PORT || 5000;
@@ -44,14 +43,6 @@ if (process.env.VERCEL) {
 app.use('/api/admin', adminRoutes);
 
 app.get('/', (req, res) => res.send('Server is ready'));
-
-app.get('/api/health', (req, res) => {
-  const states = ['disconnected', 'connected', 'connecting', 'disconnecting'];
-  res.json({
-    dbState: states[mongoose.connection.readyState] || mongoose.connection.readyState,
-    lastConnectError,
-  });
-});
 
 app.use(notFound);
 app.use(errorHandler);

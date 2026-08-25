@@ -5,7 +5,7 @@ import dns from 'dns';
 // makes the driver hang indefinitely instead of failing over to IPv4.
 dns.setDefaultResultOrder('ipv4first');
 
-export let lastConnectError = null;
+let lastConnectError = null;
 
 let connectionPromise = null;
 
