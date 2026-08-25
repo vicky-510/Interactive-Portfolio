@@ -9,12 +9,16 @@ import adminRoutes from './routes/adminRoutes.js';
 
 const port = process.env.PORT || 5000;
 
+const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map((origin) => origin.trim());
+
 connectDB();
 
 const app = express();
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: allowedOrigins,
   credentials: true,
 }));
 app.use(express.json());
@@ -28,4 +32,8 @@ app.get('/', (req, res) => res.send('Server is ready'));
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+if (!process.env.VERCEL) {
+  app.listen(port, () => console.log(`Server is running on port ${port}`));
+}
+
+export default app;

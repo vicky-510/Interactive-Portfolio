@@ -76,11 +76,15 @@ const registerAdmin = asyncHandler(async (req, res) => {
 // logout
 
 const logoutAdmin = asyncHandler(async (req, res) => {
+   const isProduction = process.env.NODE_ENV === 'production';
+
    res.cookie('jwt', '', {
     httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
     expires: new Date(0)
    })
-    res.status(200).json({ message: ' Admin Logged out '})
+    res.status(200).json({ message: 'Admin logged out' })
 });
 
 

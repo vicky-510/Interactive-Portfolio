@@ -1,0 +1,18 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "frontend/dist"
+
+# Proxy API calls to the Vercel-hosted backend.
+# Replace with the real Vercel deployment URL after the first backend deploy.
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-backend-project.vercel.app/api/:splat"
+  status = 200
+  force = true
+
+# SPA fallback so client-side routes (e.g. /admin-login) resolve on refresh/direct hit
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
