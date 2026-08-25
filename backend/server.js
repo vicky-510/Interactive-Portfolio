@@ -14,7 +14,9 @@ const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map((origin) => origin.trim());
 
-connectDB();
+if (!process.env.VERCEL) {
+  connectDB();
+}
 
 const app = express();
 
@@ -25,6 +27,19 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+if (process.env.VERCEL) {
+  // Ensure the connection is actually awaited within this invocation's
+  // lifetime instead of firing unawaited at module load (see config/db.js).
+  app.use(async (req, res, next) => {
+    try {
+      await connectDB();
+      next();
+    } catch (error) {
+      next(error);
+    }
+  });
+}
 
 app.use('/api/admin', adminRoutes);
 

@@ -7,27 +7,39 @@ dns.setDefaultResultOrder('ipv4first');
 
 export let lastConnectError = null;
 
-const connectDB = async ()  => {
+let connectionPromise = null;
 
-    try{
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
+// Cached-promise pattern: on serverless (Vercel), calling connect() once at
+// module load and never awaiting it lets the runtime freeze/orphan the
+// in-flight connection between invocations. Callers must await connectDB()
+// from inside request handling so the connection is guaranteed to actually
+// run to completion (success or failure) within that invocation's lifetime.
+const connectDB = () => {
+    if (mongoose.connection.readyState === 1) {
+        return Promise.resolve();
+    }
+
+    if (!connectionPromise) {
+        connectionPromise = mongoose.connect(process.env.MONGO_URI, {
             family: 4,
             serverSelectionTimeoutMS: 8000,
+        })
+        .then((conn) => {
+            lastConnectError = null;
+            console.log(`MongoDB Connected: ${conn.connection.host} `);
+        })
+        .catch((error) => {
+            lastConnectError = error.message;
+            console.log(`Error: ${error.message}`);
+            connectionPromise = null; // allow a retry on the next call
+            if (!process.env.VERCEL) {
+                process.exit(1);
+            }
+            throw error;
         });
-        lastConnectError = null;
-        console.log(`MongoDB Connected: ${conn.connection.host} `);
-    }
-    catch(error){
-        lastConnectError = error.message;
-        console.log(`Error: ${error.message}`);
-        // Don't kill the process here: on Vercel this runs inside a serverless
-        // function, and process.exit() crashes the whole invocation instead of
-        // just failing the request. Let the caller/route handle the rejection.
-        if (!process.env.VERCEL) {
-            process.exit(1);
-        }
     }
 
+    return connectionPromise;
 };
 
 export default connectDB;
