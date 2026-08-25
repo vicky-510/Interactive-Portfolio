@@ -1,7 +1,7 @@
 [build]
   base = "frontend"
   command = "npm run build"
-  publish = "frontend/dist"
+  publish = "dist"
 
 # Proxy API calls to the Vercel-hosted backend.
 # Replace with the real Vercel deployment URL after the first backend deploy.
