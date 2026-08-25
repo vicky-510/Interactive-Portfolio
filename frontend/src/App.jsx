@@ -1,19 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import LoadingSpinner from './components/LoadingSpinner';
+import ErrorBoundary from './components/ErrorBoundary';
+import lazyWithRetry from './utils/lazyWithRetry';
 
 
-const Home = lazy(() => import('./pages/Home'));
-const VoicePort = lazy(() => import('./pages/VoicePort'));
-const Login = lazy(() => import('./pages/Login'));
-const Register = lazy(() => import('./pages/Register'));
-const Profile = lazy(() => import('./pages/Profile'));
-const Contact = lazy(() => import('./pages/Contacts'));
-const Dashboard = lazy(() => import('./pages/Dashboard'));
-const BlogRole = lazy(() => import('./pages/BlogRole'));
-const PrivateRoute = lazy(() => import('./components/PrivateRoute'));
+const Home = lazyWithRetry(() => import('./pages/Home'), 'Home');
+const VoicePort = lazyWithRetry(() => import('./pages/VoicePort'), 'VoicePort');
+const Login = lazyWithRetry(() => import('./pages/Login'), 'Login');
+const Register = lazyWithRetry(() => import('./pages/Register'), 'Register');
+const Profile = lazyWithRetry(() => import('./pages/Profile'), 'Profile');
+const Contact = lazyWithRetry(() => import('./pages/Contacts'), 'Contacts');
+const Dashboard = lazyWithRetry(() => import('./pages/Dashboard'), 'Dashboard');
+const BlogRole = lazyWithRetry(() => import('./pages/BlogRole'), 'BlogRole');
+const PrivateRoute = lazyWithRetry(() => import('./components/PrivateRoute'), 'PrivateRoute');
 // const Demo = lazy(() => import('./components/Demo'));
 
 
@@ -26,6 +28,7 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
+      <ErrorBoundary>
       <Suspense fallback={<LoadingSpinner />} >
 
         <ToastContainer />
@@ -48,6 +51,7 @@ function App() {
           </Route>
         </Routes>
       </Suspense>
+      </ErrorBoundary>
 
       <HashLink smooth to="/#Home" />
       <HashLink smooth to="/#Projects" />
