@@ -3,19 +3,20 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const Contacts = () => {
+const SERVICE_ID = "service_xf5ui3q";
+const TEMPLATE_ID = "template_gp5rrko";
 
-  const Navigate = useNavigate();
+const Contacts = () => {
+  const navigate = useNavigate();
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     emailjs.init("m0LuEuudhJEpY7NHr");
   }, []);
-
-  const SERVICE_ID = "service_xf5ui3q";
-  const TEMPLATE_ID = "template_gp5rrko";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -30,15 +31,10 @@ const Contacts = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-
-
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setIsSending(true);
 
-    // Use formData to do whatever you want with the form data
-    // For example, you can save it to a database
-
-    // Send user details to email
     const templateParams = {
       name: formData.name,
       email: formData.email,
@@ -54,184 +50,117 @@ const Contacts = () => {
       screenHeight: window.screen.height,
     };
 
-    // Fetch the user's IP address from a third-party service
-    fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
+    try {
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
         templateParams.ipAddress = data.ip;
-        sendEmail(SERVICE_ID, TEMPLATE_ID, templateParams);
-      })
-      .catch(error => {
-        console.log(' ', error);
-        sendEmail(SERVICE_ID, TEMPLATE_ID, templateParams);
-      });
+      } catch {
+        // IP lookup is best-effort only; continue without it.
+      }
 
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams);
 
-  const sendEmail = (serviceID, templateID, templateParams) => {
-    emailjs.send(serviceID, templateID, templateParams)
-
-
+      toast.success('Your message has been sent successfully!');
+      setFormData({ name: '', email: '', phone: '', message: '', company: '' });
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      toast.error('Something went wrong sending your message. Please try again.');
+    } finally {
+      setIsSending(false);
+    }
   };
-  toast.success(`Your message has been sent successfully!`);
-
-    // Clear form data after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      company: '', // Add any other form fields if needed
-    });
-
-    Navigate('/');
-
-
-
-  };
-
 
   return (
     <>
       <Navbar />
-      <div id="Contact"  className="rem-space contact-div-css"> <br />
-     
-      </div>
-      <section className='contact-section-css' >
-        <Container className='contact-div-css1'>
+      <div id="Contact" className="rem-space contact-div-css"></div>
+      <section className="contact-section-v2">
+        <Container>
+          <h2 className="text-center contact-title-v2">Get In Touch</h2>
+          <p className="text-center contact-subtitle-v2">
+            Have a project or opportunity in mind? Send a message and I&rsquo;ll get back to you.
+          </p>
 
+          <Row className="contact-grid-v2">
+            <Col lg="7">
+              <div className="contact-form-card">
+                <Form onSubmit={handleFormSubmit}>
+                  <Row>
+                    <Col lg="6">
+                      <Form.Group className="mb-3">
+                        <Form.Control className="contact-input" type="text" placeholder="Name *" name="name" value={formData.name} onChange={handleChange} required />
+                      </Form.Group>
+                    </Col>
 
-          <div className="contact-container">
-            <h2 className="text-center contact-title-css" ><br/>
+                    <Col lg="6">
+                      <Form.Group className="mb-3">
+                        <Form.Control className="contact-input" type="email" placeholder="Email *" name="email" value={formData.email} onChange={handleChange} required />
+                      </Form.Group>
+                    </Col>
 
-              CONTACT ME
-            </h2>
-            <br /><br />
-            <Row>
-              <Col lg="8">
-                <div className="contact-box p-4 contact-div-body" ><br />
-                  <h5>Fields marked with &#39;*&#39; are required.</h5>
-                  <Form onSubmit={handleFormSubmit} >
-                    <Row>
+                    <Col lg="6">
+                      <Form.Group className="mb-3">
+                        <Form.Control className="contact-input" type="tel" placeholder="Phone *" pattern="[6-9]\d{9}" minLength="10" maxLength="12" name="phone" value={formData.phone} onChange={handleChange} required />
+                      </Form.Group>
+                    </Col>
 
+                    <Col lg="6">
+                      <Form.Group className="mb-3">
+                        <Form.Control className="contact-input" type="text" placeholder="Company name *" name="company" id="company" value={formData.company} onChange={handleChange} required />
+                      </Form.Group>
+                    </Col>
 
+                    <Col lg="12">
+                      <Form.Group className="mb-3">
+                        <Form.Control className="contact-input" as="textarea" rows={4} placeholder="Message *" minLength="3" maxLength="100" name="message" value={formData.message} onChange={handleChange} required />
+                      </Form.Group>
+                    </Col>
 
-                      <Col lg="6">
-                        <Form.Group className="mt-3">
-                          <Form.Control type="text" placeholder="Name *" name="name" value={formData.name} onChange={handleChange} required />
-                        </Form.Group>
-                      </Col>
+                    <Col lg="12">
+                      <Button type="submit" className="about-btn-primary contact-submit-btn" disabled={isSending}>
+                        {isSending ? 'SENDING...' : 'SEND MESSAGE'}
+                      </Button>
+                    </Col>
+                  </Row>
+                </Form>
+              </div>
+            </Col>
 
-                      <Col lg="6">
-                        <Form.Group className="mt-3">
-                          <Form.Control type="email" placeholder="Email *" name="email" value={formData.email} onChange={handleChange} required />
-                        </Form.Group>
-                      </Col>
-
-
-
-                      <Col lg="6">
-                        <Form.Group className="mt-3">
-                          <Form.Control type="tel" placeholder="Phone *" pattern="[6-9]\d{9}" minLength="10" maxLength="12" name="phone" value={formData.phone} onChange={handleChange} required />
-                        </Form.Group>
-                      </Col>
-
-                      <Col lg="6">
-                        <Form.Group className="mt-3">
-                          <Form.Control type="text" placeholder="Company name *" name="company" id="company" value={formData.company} onChange={handleChange} required />
-                        </Form.Group>
-                      </Col>
-
-
-                      <Col lg="12">
-                        <Form.Group className="mt-3">
-                          <Form.Control as="textarea" rows={4} placeholder="Message *" minLength="3" maxLength="100" name="message" value={formData.message} onChange={handleChange} required />
-                        </Form.Group>
-                      </Col>
-
-                      <Col lg="12">
-                        <Button type="submit" className="btn btn-danger-gradiant mt-3 mb-3 text-white border-0 py-2 px-3"
-                        //  onClick={sendUserDetails}
-                         >
-                          <span>SUBMIT</span>
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Form>
+            <Col lg="5">
+              <div className="contact-info-card">
+                <div className="contact-info-item">
+                  <FaMapMarkerAlt size={20} className="contact-info-icon" />
+                  <div>
+                    <h6 className="contact-info-label">Address</h6>
+                    <p className="contact-info-text">4/11 Ganapathy Servai Street,<br />K.Pudur, Madurai-7</p>
+                  </div>
                 </div>
-              </Col>
-              <Col lg="4" className="bg-image contact-col-css" >
-                <div className="detail-box p-4 text-white" >
-                  <br /><br />
-                  <h5 className="font-weight-light mb-3 contact-address-css">ADDRESS</h5>
-                  <p className="op-7 contact-text-css">
-                    4/11 Ganapathy Servai street,
-                    <br />
-                    K.Pudur, Madurai-7.
-                  </p>
-                  <h5 className="font-weight-light mb-3 mt-4 contact-address-css">CALL US</h5>
-                  <p className="op-7 contact-text-css">
-                    +91-8189950272
-                    <br />
-                    Vignesh510510@gmail.com
-                  </p>
 
+                <div className="contact-info-item">
+                  <FaPhoneAlt size={18} className="contact-info-icon" />
+                  <div>
+                    <h6 className="contact-info-label">Call</h6>
+                    <p className="contact-info-text">+91 8189950272</p>
+                  </div>
                 </div>
-              </Col>
-            </Row>
-          </div>
+
+                <div className="contact-info-item">
+                  <FaEnvelope size={18} className="contact-info-icon" />
+                  <div>
+                    <h6 className="contact-info-label">Email</h6>
+                    <p className="contact-info-text">vignesh510510@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </Container>
-        <br />
-        <br />
-        <br />
-        <br />
       </section>
       <Footer />
-
     </>
-
-
-
-
-
-
-
   );
 };
 
 export default Contacts;
-
-  // const sendUserDetails = () => {
-  //   // Prepare the template parameters
-  //   const templateParams = {
-  //     name: formData.name,
-  //     email: formData.email,
-  //     phone: formData.phone,
-  //     company: formData.company,
-  //     message: formData.message,
-  //     ipAddress: '',
-  //     referrerURL: document.referrer,
-  //     operatingSystem: navigator.platform,
-  //     browserName: navigator.userAgent,
-  //     language: navigator.language,
-  //     screenWidth: window.screen.width,
-  //     screenHeight: window.screen.height,
-  //   };
-
-  //   // Fetch the user's IP address from a third-party service
-  //   fetch('https://api.ipify.org?format=json')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       templateParams.ipAddress = data.ip;
-  //       sendEmail(SERVICE_ID, TEMPLATE_ID, templateParams);
-  //     })
-  //     .catch(error => {
-  //       console.log(' ', error);
-  //       sendEmail(SERVICE_ID, TEMPLATE_ID, templateParams);
-  //     });
-  // };
-
-  // const sendEmail = (serviceID, templateID, templateParams) => {
-  //   emailjs.send(serviceID, templateID, templateParams)
-
-
-  // };
