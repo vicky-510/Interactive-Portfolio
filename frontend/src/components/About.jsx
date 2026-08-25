@@ -1,72 +1,75 @@
 // import React from 'react';
 import { Container, Button } from 'react-bootstrap';
-import vignesh from '../assets/img/vigneshwaran_img.webp'
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import vignesh from '../assets/img/hackathon-vignesh.webp'
+import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
 import '../assets/styles/Main.css';
-import { FaDownload } from "react-icons/fa";
 
-
+const stats = [
+  { value: '2+', label: 'Years Experience' },
+  { value: '6+', label: 'Projects Built' },
+];
 
 const About = () => {
-const resumeLink = 'https://drive.google.com/file/d/12QBfYCkkbNPl4JGVmqc5RAbS9d5r1DwO/view';
+  const resumeLink = 'https://drive.google.com/file/d/12QBfYCkkbNPl4JGVmqc5RAbS9d5r1DwO/view';
 
   return (
     <>
-      <div id="About" className="rem-space">
-      </div>
-      <section className='about-section' >
-       
-        <h2 className="text-center text-white about-title" >ABOUT ME</h2>
-      
-        <Container className="card-container about-container-top"   >
-          <span className="pro" >PROFILE</span>
-          <img className="round"  rel="preload" src={vignesh} alt="user" width="160px"  /> 
-          {/* as="image"  */}
-          <h3 className='about-name'>Vigneshwaran M</h3>
-          {/* <h6 className='about-place'>Madurai, India</h6> */}
-          <p className='about-role'>Jr. Software Engineer <br/>(MERN/MEAN)</p>
-          <div className="buttons">
-            <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" className='about-decor-none' aria-label="About">
-              <Button className="primary about-btn-1" >
-                Message
-              </Button>
-            </a><span>  </span>
-            <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" className='about-decor-none' aria-label="About">
-              <Button className="primary ghost about-btn-2" >
-                Follow
-              </Button>
-            </a>
-          </div>
-          <br />
+      <div id="About" className="rem-space"></div>
+      <section className='about-section-v2'>
+        <Container>
+          <h2 className="text-center about-title-v2">ABOUT ME</h2>
 
-          <div className='about-div-social'>
-            <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" className='about-git-css' aria-label="About">
-              <FaGithub size={32} color='#182C61' className='icon footer-socio' />
-            </a>
-            <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" className='about-linkedin-css' aria-label="About">
-              <FaLinkedin size={32} color='#182C61' className='icon footer-socio' />
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" className='about-linkedin-whatsapp' aria-label="About">
-              <FaWhatsapp size={32} color='#182C61' className='icon footer-socio' />
-            </a>
-           
-          </div>
-         <br/>
-          <div className='about-div-download'>
-            {/* <a href="https://drive.google.com/file/d/10eSQnPs8AwvCMsdszC3_-ieRzUHw9UuH/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
-             className='about-decor-none' aria-label="About" download>
-              <Button className="btn btn-warning mx-auto d-block about-btn-resume"  >Download Resume  </Button>
-            </a> */}
+          <div className="about-grid">
+            <div className="about-content-col">
+              <span className="about-eyebrow">JR. SOFTWARE ENGINEER · MERN / MEAN</span>
+              <h3 className="about-heading">Hi, I&apos;m Vigneshwaran M</h3>
+              <p className="about-bio">
+                A software engineer from Chennai who builds fast, reliable web applications
+                end to end &mdash; from responsive Angular/React interfaces to Node.js APIs and
+                MongoDB/MySQL-backed services. I care about clean code, thoughtful UX, and
+                shipping things that actually work.
+              </p>
 
-            <a href={resumeLink} target="_blank" rel="noopener noreferrer"
-             className='about-decor-none' aria-label="About" download>
-              <Button className="btn btn-warning mx-auto d-block about-btn-resume"  >Download CV <FaDownload size={17} className='about-btn-css-icon'/>
-              </Button>
-            </a>
+              <div className="about-stats-row">
+                {stats.map((stat) => (
+                  <div className="about-stat" key={stat.label}>
+                    <span className="about-stat-value">{stat.value}</span>
+                    <span className="about-stat-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="about-actions-row">
+                <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" className='about-decor-none' aria-label="Message on WhatsApp">
+                  <Button className="about-btn-primary">
+                    Message Me
+                  </Button>
+                </a>
+                <a href={resumeLink} target="_blank" rel="noopener noreferrer" className='about-decor-none' aria-label="Download CV" download>
+                  <Button className="about-btn-outline">
+                    Download CV <FaDownload size={15} className='about-btn-css-icon' />
+                  </Button>
+                </a>
+              </div>
+
+              <div className='about-social-row'>
+                <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" className='about-social-icon about-social-icon-onlight' aria-label="GitHub">
+                  <FaGithub size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" className='about-social-icon about-social-icon-onlight' aria-label="LinkedIn">
+                  <FaLinkedin size={20} />
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" className='about-social-icon about-social-icon-onlight' aria-label="WhatsApp">
+                  <FaWhatsapp size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div className="about-photo-col">
+              <img className="about-photo-full" src={vignesh} alt="Vigneshwaran M at a hackathon" />
+            </div>
           </div>
-         
         </Container>
-       
       </section>
     </>
   );

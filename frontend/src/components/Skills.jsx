@@ -1,5 +1,5 @@
 // import React from "react";
-import { Container, Col, Card } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 import html5 from '../assets/img/html5.webp';
 import css3 from '../assets/img/css-3.webp';
 import js from '../assets/img/JS.webp';
@@ -13,149 +13,71 @@ import typescript from '../assets/img/typescript.webp';
 import mongodb from '../assets/img/mongo-db.webp';
 import '../assets/styles/Main.css';
 
+const frontendSkills = [
+  { src: html5, label: 'HTML' },
+  { src: css3, label: 'CSS' },
+  { src: js, label: 'JavaScript' },
+  { src: typescript, label: 'Typescript' },
+  { src: bootstrap, label: 'Bootstrap' },
+  { src: react, label: 'React' },
+  { src: angular, label: 'Angular' },
+];
+
+const backendSkills = [
+  { src: node, label: 'Node Js' },
+  { src: express, label: 'Express Js' },
+  { src: mongodb, label: 'Mongo DB' },
+  { src: mysql, label: 'MySQL' },
+];
+
+const SkillCard = ({ src, label }) => (
+  <div className="skill-marquee-card">
+    <img src={src} className="skill-img-all" alt={label} />
+    <span className="skill-title-h6">{label}</span>
+  </div>
+);
+
+SkillCard.propTypes = {
+  src: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
+const SkillRow = ({ skills, direction }) => (
+  <div className="skill-marquee-row">
+    <div className={`skill-marquee-track skill-marquee-${direction}`}>
+      {[...skills, ...skills].map((skill, i) => (
+        <SkillCard key={`${skill.label}-${i}`} src={skill.src} label={skill.label} />
+      ))}
+    </div>
+  </div>
+);
+
+SkillRow.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  direction: PropTypes.oneOf(['left', 'right']).isRequired,
+};
 
 const Skills = () => {
-
-
   return (
     <>
       <div id="Skills" className="rem-space">
       </div>
-      <br />
-      <hr className='common-hr1' />
-      <section className='skill-bg-color' >
-        <Container className='skill-bg-color'>
-          <div className="card skill-card" >
-            <div className="card-body">
-              <h2 className="text-center weight skill-title" >
-                SKILLS
-              </h2>
-              <br /><br />
-              <div className="row justify-content-center">
-                <Col md="3" >
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={html5} className="card-img-top skill-img-all floating-effect" alt="Skill 1" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6" >
-                      HTML
-                    </h6>
-                  </Card>
-                </Col>
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={css3} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      CSS
-                    </h6>
-                  </Card>
-                </Col>
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={js} className="card-img-top skill-img-all floating-effect" alt="Skill 3" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      JavaScript
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img src={typescript} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Typescript
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={bootstrap} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Bootstrap
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={react} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      React
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img src={angular} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Angular
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={node} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Node Js
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={express} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Express Js
-                    </h6>
-                  </Card>
-                </Col>
-
-                <Col md="3" >
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={mongodb} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      Mongo DB
-                    </h6>
-                  </Card>
-                </Col>
-
-
-                <Col md="3">
-                  <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img src={mysql} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
-                    </div>
-                    <h6 className="card-title text-center weight skill-title-h6 " >
-                      MySQL
-                    </h6>
-                  </Card>
-                </Col>
-              </div>
-            </div>
-          </div>
-        </Container>
+      <section className='skill-bg-color'>
+        <div className="skill-card">
+          <h2 className="text-center weight skill-title">
+            SKILLS
+          </h2>
+          <SkillRow skills={frontendSkills} direction="left" />
+          <SkillRow skills={backendSkills} direction="right" />
+        </div>
       </section>
     </>
   );
-}
+};
 
 export default Skills;
