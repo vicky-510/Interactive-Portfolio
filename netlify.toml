@@ -4,10 +4,9 @@
   publish = "dist"
 
 # Proxy API calls to the Vercel-hosted backend.
-# Replace with the real Vercel deployment URL after the first backend deploy.
 [[redirects]]
   from = "/api/*"
-  to = "https://your-backend-project.vercel.app/api/:splat"
+  to = "https://vwaran-api.vercel.app/api/:splat"
   status = 200
   force = true
 
