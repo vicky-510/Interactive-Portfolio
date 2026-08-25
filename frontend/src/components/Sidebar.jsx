@@ -1,103 +1,59 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { 
-  BsBack, BsSpeedometer,
-  BsPerson, BsPersonBadge, 
-  // BsBadge3DFill BsPhone,
-
+import {
+  BsBoxArrowRight, BsSpeedometer2,
+  BsPersonBadge, BsPersonPlus,
 } from "react-icons/bs";
-import '../assets/styles/Dashboard.css'
-import logo from '../assets/img/logo_white.gif'
-
-import { useDispatch} from 'react-redux';
-import {useNavigate} from 'react-router-dom'
-import {useLogoutMutation} from '../slices/adminApiSlice';
-import {logout} from '../slices/authSlice';
-// import { Link } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useLogoutMutation } from '../slices/adminApiSlice';
+import { logout } from '../slices/authSlice';
 import { toast } from 'react-toastify';
 
-
-
-
+const navItems = [
+  { href: '/dashboard', label: 'Dashboard', icon: BsSpeedometer2 },
+  { href: '/profile', label: 'Profile', icon: BsPersonBadge },
+  { href: '/register', label: 'Add Admin', icon: BsPersonPlus },
+];
 
 function Sidebar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
+  const [logoutApiCall] = useLogoutMutation();
 
-
-const dispatch = useDispatch();
-const navigate = useNavigate();
-
-const [logoutApiCall] = useLogoutMutation();
-
-const logoutHandler = async ()=> {
-
-   try{
-    await logoutApiCall().unwrap();
-    dispatch(logout());
-    navigate('/admin-login');
-    toast.success(" Logged out Successful ")
-   }
-   catch(err){
-    console.log(err);
-
-   }
-
-}
-
+  const logoutHandler = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate('/admin-login');
+      toast.success('Logged out successfully');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
-    <div className='bg-white sidebar p-2 '>
-       <br/>
-     
-       <div className='m-2'>
-       {/* <span className='brand-name fs-4'>FOLIO</span> */}
-        <img src={logo} alt='logo' width='90px' style={{marginLeft:'40px'}}/>
-       </div>
+    <div className='dash-sidebar'>
+      <div className='dash-sidebar-brand'>Vwaran</div>
 
-       <br/>
-       <br/>
-       <br/>
+      <nav className='dash-sidebar-nav'>
+        {navItems.map(({ href, label, icon: Icon }) => (
+          <a
+            key={label}
+            href={href}
+            className={`dash-sidebar-link ${pathname === href ? 'dash-sidebar-link-active' : ''}`}
+          >
+            <Icon size={19} className='dash-sidebar-icon' />
+            <span>{label}</span>
+          </a>
+        ))}
 
-       <div className='list-group list-group-flush'>
-        <a className='list-group-item py-2 ' style={{ borderRadius: '10px'}}  href='/dashboard'>
-        <BsSpeedometer size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Dashboard</span> 
+        <a className='dash-sidebar-link dash-sidebar-logout' onClick={logoutHandler}>
+          <BsBoxArrowRight size={19} className='dash-sidebar-icon' />
+          <span>Logout</span>
         </a>
-        <br/>
-
-       
-
-        <a className='list-group-item py-2' href='/profile'>
-        <BsPersonBadge size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Profile</span> 
-        </a>
-        <br/>
-
-        <a className='list-group-item py-2' href='/register'>
-        <BsPerson size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Add Admin</span> 
-        </a>
-        <br/>
-
-        {/* <a className='list-group-item py-2' href='/Contact'>
-        <BsPhone size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Contacts</span> 
-        </a>
-        <br/> */}
-
-        {/* <a className='list-group-item py-2' href='/Hired'>
-        <BsBadge3DFill size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Hired</span> 
-        </a>
-        <br/> */}
-
-        <a className='list-group-item py-2' onClick={ logoutHandler }>
-        <BsBack size={22} color='#45aaf2' style={{ marginLeft: '0px', marginBottom: '8px',marginTop: '1px', marginRight:'8px' }} className='icon' id='icon' />
-        <span >Logout</span> 
-        </a>
-        <br/>
-
-       </div>
-
+      </nav>
     </div>
   )
 }
