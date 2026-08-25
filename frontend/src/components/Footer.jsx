@@ -1,7 +1,7 @@
 // import React from 'react';
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaLinkedin, FaWhatsapp, FaGithub, FaInstagram, FaMailBulk, FaMap, FaPhoneAlt } from 'react-icons/fa';
+import { FaLinkedin, FaWhatsapp, FaGithub, FaMailBulk, FaMap, FaPhoneAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { SiLeetcode } from "react-icons/si";
 

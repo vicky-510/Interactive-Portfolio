@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import logo from '../assets/img/logo_waran.gif';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BsFillHouseFill, BsFillInfoSquareFill } from "react-icons/bs";
-import { FaThList,FaSignInAlt } from "react-icons/fa";
+import { FaThList } from "react-icons/fa";
 import { MdWork} from "react-icons/md";
 import { SiPaloaltosoftware } from "react-icons/si";
 import { BiSolidContact } from "react-icons/bi";
@@ -80,10 +80,7 @@ const Navbar = () => {
               </li>
 
 
-              {/* <li className="nav-item nav-common-btn-css">
-                <HashLink to="/login" className="link-font-size navbars-icon-css9">Login<FaSignInAlt size={22}  className='navbars-icon-css10' />
-                </HashLink>
-              </li> */}
+              {/* Admin login intentionally not linked from the UI; reachable directly at /admin-login */}
             </ul>
           </div>
         </div>

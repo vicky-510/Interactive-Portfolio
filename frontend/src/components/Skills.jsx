@@ -8,11 +8,8 @@ import react from '../assets/img/react-1.webp';
 import mysql from '../assets/img/mysql-4.webp';
 import node from '../assets/img/node-1.webp';
 import express from '../assets/img/express-1.webp';
-import jquery from '../assets/img/jquery-3.webp';
 import angular from '../assets/img/angular.webp';
 import typescript from '../assets/img/typescript.webp';
-import java from '../assets/img/java-2.webp';
-import php from '../assets/img/php2.webp';
 import mongodb from '../assets/img/mongo-db.webp';
 import '../assets/styles/Main.css';
 
@@ -38,7 +35,7 @@ const Skills = () => {
                 <Col md="3" >
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={html5} className="card-img-top skill-img-all floating-effect" alt="Skill 1" />
+                      <img src={html5} className="card-img-top skill-img-all floating-effect" alt="Skill 1" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6" >
                       HTML
@@ -48,7 +45,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={css3} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
+                      <img src={css3} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       CSS
@@ -58,7 +55,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={js} className="card-img-top skill-img-all floating-effect" alt="Skill 3" />
+                      <img src={js} className="card-img-top skill-img-all floating-effect" alt="Skill 3" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       JavaScript
@@ -68,7 +65,7 @@ const Skills = () => {
 
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img rel="preload" as="image" src={typescript} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img src={typescript} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Typescript
@@ -79,7 +76,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={bootstrap} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                      <img src={bootstrap} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Bootstrap
@@ -90,7 +87,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={react} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
+                      <img src={react} className="card-img-top skill-img-all floating-effect" alt="Skill 2" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       React
@@ -100,7 +97,7 @@ const Skills = () => {
 
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
-                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img rel="preload" as="image" src={angular} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                    <div className="d-flex align-items-center justify-content-center skill-common-div"><img src={angular} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Angular
@@ -111,7 +108,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={node} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                      <img src={node} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Node Js
@@ -122,7 +119,7 @@ const Skills = () => {
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={express} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                      <img src={express} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Express Js
@@ -133,7 +130,7 @@ const Skills = () => {
                 <Col md="3" >
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={mongodb} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                      <img src={mongodb} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       Mongo DB
@@ -142,46 +139,10 @@ const Skills = () => {
                 </Col>
 
 
-
-
-
-
-
-                {/* <Col md="3">
-              <Card className="mb-3 skill-inner-card" >
-                  <div className="d-flex align-items-center justify-content-center skill-common-div"> <img  rel="preload" as="image" src={java} className="card-img-top skill-img-all floating-effect" alt="Skill 4"  />
-                  </div>
-                  <h6 className="card-title text-center weight skill-title-h6 " >
-                    Java
-                  </h6>
-                </Card>
-              </Col>
-
-              <Col md="3">
-              <Card className="mb-3 skill-inner-card" >
-                  <div className="d-flex align-items-center justify-content-center skill-common-div">   <img  rel="preload" as="image" src={php} className="card-img-top skill-img-all floating-effect" alt="Skill 4"  />
-                  </div>
-                  <h6 className="card-title text-center weight skill-title-h6 " >
-                    Php
-                  </h6>
-                </Card>
-              </Col> */}
-
-                {/* <Col md="3">
-              <Card className="mb-3 skill-inner-card" >
-                  <div className="d-flex align-items-center justify-content-center skill-common-div"><img  rel="preload" as="image" src={jquery} className="card-img-top skill-img-all floating-effect" alt="Skill 4"  />
-                  </div>
-                  <h6 className="card-title text-center weight skill-title-h6 " >
-                    JQuery
-                  </h6>
-                </Card>
-              </Col> */}
-
-
                 <Col md="3">
                   <Card className="mb-3 skill-inner-card" >
                     <div className="d-flex align-items-center justify-content-center skill-common-div">
-                      <img rel="preload" as="image" src={mysql} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
+                      <img src={mysql} className="card-img-top skill-img-all floating-effect" alt="Skill 4" />
                     </div>
                     <h6 className="card-title text-center weight skill-title-h6 " >
                       MySQL

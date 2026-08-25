@@ -141,8 +141,6 @@ function Register() {
         <button className="btn mt-3">Register</button>
 
 
-         {/* <Link to="/dashboard">Go Back</Link>  <a href="/login">Login</a> */}
-
 
     </form>
    

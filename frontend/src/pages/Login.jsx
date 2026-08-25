@@ -58,11 +58,6 @@ function Login() {
         }
     };
 
-    const showdummy = () => {
-        toast.error('Invalid email or Password')
-    }
-
-
     return (
 
         <>
@@ -94,7 +89,7 @@ function Login() {
                             />
                         </div>
                         {isLoading && <Loader />}
-                        <button className="btn mt-3" onClick={showdummy}>Login</button>
+                        <button className="btn mt-3" type="submit" disabled={isLoading}>Login</button>
 
                     </form>
                     <div className="text-center fs-6"><br />

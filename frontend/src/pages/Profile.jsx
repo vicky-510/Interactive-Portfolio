@@ -1,6 +1,6 @@
 // import React from 'react';
 // // import axios from 'axios';
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 // import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import '../assets/styles/Main.css';
@@ -21,28 +21,19 @@ import DashNav from '../components/DashNav';
 
 
 function Profile() {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const { adminInfo } = useSelector((state) => state.auth);
+
+    const [name, setName] = useState(adminInfo.name);
+    const [email, setEmail] = useState(adminInfo.email);
+    const [phone, setPhone] = useState(adminInfo.phone);
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
     // const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const { adminInfo } = useSelector((state) => state.auth);
-
     const [updateProfile, {isLoading}] = useUpdateAdminMutation();
 
-    
-    useEffect(() => {
-      setName(adminInfo.name);
-      setEmail(adminInfo.email);
-      setPhone(adminInfo.phone);
-
-       
-       },[adminInfo.setName, adminInfo.setEmail, adminInfo.setPhone, adminInfo.name, adminInfo.email, adminInfo.phone]);
-    
 
     const submitHandler = async (e) => {
         e.preventDefault();

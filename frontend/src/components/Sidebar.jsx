@@ -33,7 +33,7 @@ const logoutHandler = async ()=> {
    try{
     await logoutApiCall().unwrap();
     dispatch(logout());
-    navigate('/login');
+    navigate('/admin-login');
     toast.success(" Logged out Successful ")
    }
    catch(err){

@@ -1,9 +1,10 @@
 
 // import React from 'react'
+import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { 
+import {
   BsToggleOn
 
 } from "react-icons/bs";
@@ -36,6 +37,10 @@ function DashNav({Toggle}) {
     );
   }
   
+  DashNav.propTypes = {
+    Toggle: PropTypes.func.isRequired,
+  };
+
   export default DashNav;
   
   

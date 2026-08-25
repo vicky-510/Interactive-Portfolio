@@ -14,21 +14,17 @@ const authAdmin = asyncHandler(async (req, res) => {
 
    if(admin && (await admin.matchPassword(password))){
     generateToken(res, admin._id);
-    res.status(201).json({
+    return res.status(200).json({
         _id: admin._id,
         name: admin.name,
         email: admin.email,
         phone: admin.phone
-       
-    });
-   } else {
-    res.status(401);
-    throw new Error('Invaild email or password');
 
+    });
    }
 
-
-    res.status(200).json({ message: 'Auth Admin'});
+   res.status(401);
+   throw new Error('Invalid email or password');
 });
 
 
@@ -58,20 +54,17 @@ const registerAdmin = asyncHandler(async (req, res) => {
 
    if(admin){
     generateToken(res, admin._id);
-    res.status(201).json({
+    return res.status(201).json({
         _id: admin._id,
         name: admin.name,
         email: admin.email,
         phone: admin.phone
-       
-    });
-   } else {
-    res.status(400);
-    throw new Error('Invaild user data')
 
+    });
    }
 
-    res.status(200).json({ message: 'Register Admin'});
+   res.status(400);
+   throw new Error('Invalid admin data');
 });
 
 
@@ -137,19 +130,17 @@ const updateAdminProfile = asyncHandler(async (req, res) => {
 
        const updatedAdmin= await admin.save();
 
-       res.status(200).json({
+       return res.status(200).json({
         _id: updatedAdmin._id,
         name: updatedAdmin.name,
         email: updatedAdmin.email,
         phone: updatedAdmin.phone,
-       })
+       });
 
-    }else{
-        res.status(404);
-        throw new Error('Admin not found')
     }
-  
-    res.status(200).json({ message: 'Updated Admin profile'})
+
+    res.status(404);
+    throw new Error('Admin not found');
 });
 
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import cert from '../assets/img/intern_cert.webp';
-import { PiCertificate, PiCertificateDuotone } from "react-icons/pi";
+import { PiCertificateDuotone } from "react-icons/pi";
 
 
 

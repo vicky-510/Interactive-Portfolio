@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/admin-login" element={<Login />} />
           <Route path="/VoicePort" element={<VoicePort />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/blog/why-i-chose-fullstack-development" element={<BlogRole />} />

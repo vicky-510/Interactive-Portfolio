@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import DashNav from '../DashNav';
 // import { BsFillHouseFill} from "react-icons/bs";
 import { VscProject} from "react-icons/vsc";
@@ -67,5 +68,9 @@ function DashHome({Toggle}) {
     </div>
   )
 }
+
+DashHome.propTypes = {
+  Toggle: PropTypes.func.isRequired,
+};
 
 export default DashHome

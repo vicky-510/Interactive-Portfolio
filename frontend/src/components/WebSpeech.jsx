@@ -36,6 +36,8 @@ const WebSpeech = () => {
   };
 
   useEffect(() => {
+    // Syncing from the browser's speechSynthesis API, an external system.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     getVoices();
     if (window.speechSynthesis.onvoiceschanged !== undefined) {
       window.speechSynthesis.onvoiceschanged = getVoices;
