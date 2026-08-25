@@ -9,7 +9,12 @@ const connectDB = async ()  => {
     }
     catch(error){
         console.log(`Error: ${error.message}`);
-        process.exit(1);
+        // Don't kill the process here: on Vercel this runs inside a serverless
+        // function, and process.exit() crashes the whole invocation instead of
+        // just failing the request. Let the caller/route handle the rejection.
+        if (!process.env.VERCEL) {
+            process.exit(1);
+        }
     }
 
 };
