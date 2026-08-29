@@ -6,6 +6,9 @@ import cookieParser from 'cookie-parser';
 import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 import connectDB from './config/db.js';
 import adminRoutes from './routes/adminRoutes.js';
+import jobApplicationRoutes from './routes/jobApplicationRoutes.js';
+import noteRoutes from './routes/noteRoutes.js';
+import dashboardRoutes from './routes/dashboardRoutes.js';
 
 const port = process.env.PORT || 5000;
 
@@ -41,6 +44,9 @@ if (process.env.VERCEL) {
 }
 
 app.use('/api/admin', adminRoutes);
+app.use('/api/jobs', jobApplicationRoutes);
+app.use('/api/notes', noteRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 app.get('/', (req, res) => res.send('Server is ready'));
 

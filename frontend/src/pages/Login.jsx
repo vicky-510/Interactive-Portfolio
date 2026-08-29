@@ -9,6 +9,7 @@ import { useLoginMutation } from '../slices/adminApiSlice.js';
 import { setCredentials } from '../slices/authSlice';
 import { toast } from 'react-toastify';
 import Loader from '../components/Loader';
+import loginHeroImage from '../assets/img/dashboard-login-page-image.webp';
 
 
 function Login() {
@@ -47,9 +48,11 @@ function Login() {
     return (
         <div className="login-split">
             <div className="login-split-brand">
-                <p className="login-split-logo">Vwaran</p>
-                <h2 className="login-split-heading">Admin Console</h2>
-                <p className="login-split-text">Manage your portfolio content securely.</p>
+                <img
+                    src={loginHeroImage}
+                    alt="Focus today, build tomorrow"
+                    className="login-split-image"
+                />
             </div>
 
             <div className="login-split-form-col">

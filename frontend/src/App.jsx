@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/styles/admin-components.css';
 import { Suspense } from 'react';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -14,6 +15,11 @@ const Register = lazyWithRetry(() => import('./pages/Register'), 'Register');
 const Profile = lazyWithRetry(() => import('./pages/Profile'), 'Profile');
 const Contact = lazyWithRetry(() => import('./pages/Contacts'), 'Contacts');
 const Dashboard = lazyWithRetry(() => import('./pages/Dashboard'), 'Dashboard');
+const JobVita = lazyWithRetry(() => import('./pages/JobVita'), 'JobVita');
+const JobVitaForm = lazyWithRetry(() => import('./pages/JobVitaForm'), 'JobVitaForm');
+const Notes = lazyWithRetry(() => import('./pages/Notes'), 'Notes');
+const Interviews = lazyWithRetry(() => import('./pages/Interviews'), 'Interviews');
+const Settings = lazyWithRetry(() => import('./pages/Settings'), 'Settings');
 const BlogRole = lazyWithRetry(() => import('./pages/BlogRole'), 'BlogRole');
 const PrivateRoute = lazyWithRetry(() => import('./components/PrivateRoute'), 'PrivateRoute');
 // const Demo = lazy(() => import('./components/Demo'));
@@ -48,6 +54,12 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/jobvita" element={<JobVita />} />
+            <Route path="/jobvita/new" element={<JobVitaForm />} />
+            <Route path="/jobvita/:id/edit" element={<JobVitaForm />} />
+            <Route path="/notes" element={<Notes />} />
+            <Route path="/interviews" element={<Interviews />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
       </Suspense>

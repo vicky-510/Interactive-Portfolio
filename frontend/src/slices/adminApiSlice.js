@@ -38,9 +38,20 @@ contact: builder.mutation({
       body: data,
   }),
 }),
+verifyPassword: builder.mutation({
+  query: (data) => ({
+      url: `${ADMIN_URL}/verify-password`,
+      method:'POST',
+      body: data,
+  }),
+}),
+getProfile: builder.query({
+  query: () => `${ADMIN_URL}/profile`,
+  providesTags: ['Admin'],
+}),
 
 }),
 
 });
 
-export const {useLoginMutation, useLogoutMutation, useRegisterMutation,useUpdateAdminMutation, useContactMutation} = adminApiSlice;
+export const {useLoginMutation, useLogoutMutation, useRegisterMutation,useUpdateAdminMutation, useContactMutation, useVerifyPasswordMutation, useGetProfileQuery} = adminApiSlice;

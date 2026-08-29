@@ -2,21 +2,28 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from '../Sidebar';
 import DashNav from '../DashNav';
+import MobileNav from '../MobileNav';
+import useAdminTheme from '../../utils/useAdminTheme';
 
 function DashboardLayout({ title, children }) {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  useAdminTheme();
+  const [collapsed, setCollapsed] = useState(false);
 
-  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+  const toggleCollapsed = () => setCollapsed((prev) => !prev);
 
   return (
     <div className="dash-shell">
-      {sidebarOpen && <Sidebar />}
-      <div className={`dash-main ${sidebarOpen ? 'dash-main-shifted' : ''}`}>
-        <DashNav Toggle={toggleSidebar} title={title} />
+      <Sidebar collapsed={collapsed} onToggleCollapse={toggleCollapsed} />
+      <div
+        className="dash-main dash-main-shifted admin-dash-main"
+        style={{ marginLeft: collapsed ? 76 : 240 }}
+      >
+        <DashNav Toggle={toggleCollapsed} title={title} />
         <div className="dash-content">
           {children}
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 }

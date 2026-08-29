@@ -23,7 +23,18 @@ const adminSchema = mongoose.Schema({
 
      password: {
         type: String,
-        required: true   
+        required: true
+     },
+
+     theme: {
+        type: String,
+        enum: ['light', 'dark', 'system'],
+        default: 'system',
+     },
+
+     notificationPrefs: {
+        followUpReminders: { type: Boolean, default: true },
+        weeklySummary: { type: Boolean, default: false },
      },
 },
     {

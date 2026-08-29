@@ -28,7 +28,8 @@
     "react-router-dom": "^7.18.2",
     "react-router-hash-link": "^2.4.3",
     "react-spinners": "^0.14.1",
-    "react-toastify": "^11.1.0"
+    "react-toastify": "^11.1.0",
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.3",

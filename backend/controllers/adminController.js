@@ -1,7 +1,9 @@
 import asyncHandler from 'express-async-handler';
+import jwt from 'jsonwebtoken';
 import generateToken from '../utils/generateToken.js';
 import Admin from "../models/userModel.js"
 import Contact from "../models/contactModel.js"
+import { ACTION_TOKEN_PURPOSE } from '../middleware/actionTokenMiddleware.js';
 // @desc Auth admin/set token
 // route POST /api/admin/auth
 // @access Public
@@ -101,7 +103,9 @@ const getAdminProfile = asyncHandler(async (req, res) => {
         _id: req.admin._id,
         name: req.admin.name,
         email: req.admin.email,
-        phone: req.admin.phone
+        phone: req.admin.phone,
+        theme: req.admin.theme,
+        notificationPrefs: req.admin.notificationPrefs,
 
     };
 
@@ -132,6 +136,17 @@ const updateAdminProfile = asyncHandler(async (req, res) => {
 
         }
 
+        if (req.body.theme) {
+            admin.theme = req.body.theme;
+        }
+
+        if (req.body.notificationPrefs) {
+            admin.notificationPrefs = {
+                ...admin.notificationPrefs?.toObject?.() ?? admin.notificationPrefs,
+                ...req.body.notificationPrefs,
+            };
+        }
+
        const updatedAdmin= await admin.save();
 
        return res.status(200).json({
@@ -139,6 +154,8 @@ const updateAdminProfile = asyncHandler(async (req, res) => {
         name: updatedAdmin.name,
         email: updatedAdmin.email,
         phone: updatedAdmin.phone,
+        theme: updatedAdmin.theme,
+        notificationPrefs: updatedAdmin.notificationPrefs,
        });
 
     }
@@ -198,4 +215,32 @@ const contactAdmin = asyncHandler(async (req, res) => {
  
 
 
-export { authAdmin, registerAdmin, logoutAdmin, getAdminProfile, updateAdminProfile, contactAdmin};
+// @desc    Verify admin password and issue a short-lived action token
+// route    POST /api/admin/verify-password
+// @access  Private
+
+const verifyPassword = asyncHandler(async (req, res) => {
+    const { password } = req.body;
+
+    if (!password) {
+        res.status(400);
+        throw new Error('Password is required');
+    }
+
+    const admin = await Admin.findById(req.admin._id);
+
+    if (admin && (await admin.matchPassword(password))) {
+        const actionToken = jwt.sign(
+            { adminId: String(admin._id), purpose: ACTION_TOKEN_PURPOSE },
+            process.env.JWT_SECRET,
+            { expiresIn: '5m' }
+        );
+
+        return res.status(200).json({ actionToken });
+    }
+
+    res.status(401);
+    throw new Error('Invalid password');
+});
+
+export { authAdmin, registerAdmin, logoutAdmin, getAdminProfile, updateAdminProfile, contactAdmin, verifyPassword };

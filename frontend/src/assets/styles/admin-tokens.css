@@ -1,0 +1,59 @@
+/* Admin design tokens — scoped conceptually to the .dash-* / admin-* namespace.
+   Values mirror the existing hardcoded admin hex colors so migration is visually a no-op. */
+:root {
+  --admin-color-navy: #182C61;
+  --admin-color-navy-deep: #0e1a3f;
+  --admin-color-navy-soft: #1b2f6b;
+  --admin-color-accent: #03BFCB;
+  --admin-color-bg: #f4f6fb;
+  --admin-color-surface: #ffffff;
+  --admin-color-muted: #6c7a99;
+  --admin-color-border: rgba(24, 44, 97, 0.08);
+  --admin-shadow-sm: 0 1px 2px rgba(24, 44, 97, 0.06);
+  --admin-shadow-md: 0 8px 24px rgba(24, 44, 97, 0.12);
+
+  --admin-color-success: #1aa971;
+  --admin-color-success-bg: rgba(26, 169, 113, 0.12);
+  --admin-color-warning: #d98c0a;
+  --admin-color-warning-bg: rgba(217, 140, 10, 0.12);
+  --admin-color-danger: #d64550;
+  --admin-color-danger-bg: rgba(214, 69, 80, 0.12);
+  --admin-color-info: #3f7ee8;
+  --admin-color-info-bg: rgba(63, 126, 232, 0.12);
+  --admin-color-neutral: #6c7a99;
+  --admin-color-neutral-bg: rgba(108, 122, 153, 0.12);
+
+  --admin-radius-sm: 8px;
+  --admin-radius-md: 12px;
+  --admin-radius-lg: 18px;
+
+  --admin-space-xs: 4px;
+  --admin-space-sm: 8px;
+  --admin-space-md: 16px;
+  --admin-space-lg: 24px;
+  --admin-space-xl: 32px;
+
+  --admin-font-sm: 13px;
+  --admin-font-base: 14px;
+  --admin-font-md: 16px;
+  --admin-font-lg: 20px;
+  --admin-font-xl: 28px;
+
+  --admin-sidebar-width: 240px;
+  --admin-sidebar-width-collapsed: 76px;
+  --admin-mobilenav-height: 64px;
+}
+
+[data-theme="dark"] {
+  --admin-color-bg: #0b1226;
+  --admin-color-surface: #131c36;
+  --admin-color-muted: #8a93b3;
+  --admin-color-border: rgba(255, 255, 255, 0.08);
+  --admin-color-navy: #e8ecf7;
+}
+
+[data-theme="dark"] .dash-topbar,
+[data-theme="dark"] .admin-mobile-nav {
+  background: var(--admin-color-surface);
+  border-color: var(--admin-color-border);
+}
