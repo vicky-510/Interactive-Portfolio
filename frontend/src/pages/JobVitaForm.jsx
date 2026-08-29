@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
@@ -39,12 +39,14 @@ function JobVitaForm() {
   const [updateJob, { isLoading: isUpdating }] = useUpdateJobMutation();
 
   const [values, setValues] = useState(emptyJob);
+  const [loadedJobId, setLoadedJobId] = useState(null);
   const [actionToken, setActionToken] = useState(location.state?.actionToken || null);
   const [gateOpen, setGateOpen] = useState(isEditMode && !location.state?.actionToken);
 
-  useEffect(() => {
-    if (existingJob) setValues(existingJob);
-  }, [existingJob]);
+  if (existingJob && existingJob._id !== loadedJobId) {
+    setLoadedJobId(existingJob._id);
+    setValues(existingJob);
+  }
 
   const submitHandler = async (e) => {
     e.preventDefault();

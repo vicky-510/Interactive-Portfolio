@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -14,14 +14,14 @@ function Settings() {
   const [theme, setTheme] = useState('system');
   const [followUpReminders, setFollowUpReminders] = useState(true);
   const [weeklySummary, setWeeklySummary] = useState(false);
+  const [loadedProfile, setLoadedProfile] = useState(false);
 
-  useEffect(() => {
-    if (profile) {
-      setTheme(profile.theme || 'system');
-      setFollowUpReminders(profile.notificationPrefs?.followUpReminders ?? true);
-      setWeeklySummary(profile.notificationPrefs?.weeklySummary ?? false);
-    }
-  }, [profile]);
+  if (profile && !loadedProfile) {
+    setLoadedProfile(true);
+    setTheme(profile.theme || 'system');
+    setFollowUpReminders(profile.notificationPrefs?.followUpReminders ?? true);
+    setWeeklySummary(profile.notificationPrefs?.weeklySummary ?? false);
+  }
 
   const saveHandler = async (e) => {
     e.preventDefault();

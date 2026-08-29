@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { navItems } from './Sidebar';
+import { navItems } from './adminNavItems';
 
 function MobileNav() {
   const items = navItems.slice(0, 5);

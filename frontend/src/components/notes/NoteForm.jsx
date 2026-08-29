@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'react-bootstrap';
 import Modal from '../ui/Modal';
@@ -16,10 +16,14 @@ const emptyNote = { title: '', content: '', category: 'Personal' };
 
 function NoteForm({ show, onHide, onSubmit, initialNote, isSaving }) {
   const [values, setValues] = useState(emptyNote);
+  const [wasOpen, setWasOpen] = useState(false);
 
-  useEffect(() => {
+  if (show && !wasOpen) {
+    setWasOpen(true);
     setValues(initialNote || emptyNote);
-  }, [initialNote, show]);
+  } else if (!show && wasOpen) {
+    setWasOpen(false);
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();

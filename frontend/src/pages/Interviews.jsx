@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import Card from '../components/ui/Card';
 import EmptyState from '../components/ui/EmptyState';
@@ -37,6 +38,11 @@ function InterviewGroup({ title, jobs }) {
     </Card>
   );
 }
+
+InterviewGroup.propTypes = {
+  title: PropTypes.string.isRequired,
+  jobs: PropTypes.array.isRequired,
+};
 
 function Interviews() {
   const { data, isLoading, isError } = useGetJobsQuery({

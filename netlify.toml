@@ -3,6 +3,9 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "24"
+
 # Proxy API calls to the Vercel-hosted backend.
 [[redirects]]
   from = "/api/*"

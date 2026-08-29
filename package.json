@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",

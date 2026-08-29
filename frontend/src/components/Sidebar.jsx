@@ -1,24 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import PropTypes from 'prop-types';
-import {
-  BsBoxArrowRight, BsSpeedometer2,
-  BsPersonBadge, BsBriefcase, BsStickyFill,
-  BsCalendarCheck, BsGearFill, BsChevronLeft, BsChevronRight,
-} from "react-icons/bs";
+import { BsBoxArrowRight, BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../slices/adminApiSlice';
 import { logout } from '../slices/authSlice';
 import { toast } from 'react-toastify';
-
-export const navItems = [
-  { href: '/dashboard', label: 'Dashboard', icon: BsSpeedometer2 },
-  { href: '/profile', label: 'Profile', icon: BsPersonBadge },
-  { href: '/jobvita', label: 'JobVita', icon: BsBriefcase },
-  { href: '/notes', label: 'Notes', icon: BsStickyFill },
-  { href: '/interviews', label: 'Interviews', icon: BsCalendarCheck },
-  { href: '/settings', label: 'Settings', icon: BsGearFill },
-];
+import { navItems } from './adminNavItems';
 
 function Sidebar({ collapsed = false, onToggleCollapse }) {
   const dispatch = useDispatch();
