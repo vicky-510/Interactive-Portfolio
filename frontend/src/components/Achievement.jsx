@@ -9,6 +9,12 @@ import venueImg from '../assets/img/promptwars/hackathon_place_inner.webp';
 import goodiesImg from '../assets/img/promptwars/promptwars_goodies.webp';
 import '../assets/styles/Main.css';
 
+const devfestImages = Object.entries(
+  import.meta.glob('../assets/img/devfest/*.{webp,jpg,jpeg,png}', { eager: true })
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, mod]) => mod.default);
+
 const galleryImages = [
   { src: heroImg, alt: 'Building the PromptWars submission at the venue', className: 'achv-tile-hero' },
   { src: bannerImg, alt: 'PromptWars event banner by Google for Developers and Hack2Skill', className: 'achv-tile-banner' },
@@ -21,14 +27,14 @@ const galleryImages = [
 
 const rounds = [
   {
-    label: 'Offline Round',
+    label: 'PromptWars — In-Person/Offline',
     appName: 'Steady',
     detail: 'A recovery support platform for people navigating substance use disorders and the people who care for them. Built in 3 hours using Antigravity and Claude Opus.',
     rank: 'Top 15',
     outOf: 'of 95',
   },
   {
-    label: 'Online Round',
+    label: 'PromptWars — Virtual',
     appName: 'FIFA Nexus Twin',
     detail: 'A GenAI-powered crisis simulation and command dashboard for FIFA World Cup 2026 venue operations staff. Built over two weeks working with an AI agent.',
     rank: '#445',
@@ -42,7 +48,7 @@ const Achievement = () => {
       <div id="Hackathon" className="rem-space"></div>
       <section className="achv-section">
         <Container>
-          <h2 className="text-center achv-title">HACKATHON</h2>
+          <h2 className="text-center achv-title">HACKATHONS &amp; EVENTS</h2>
 
           <div className="achv-grid">
             <div className="achv-gallery">
@@ -57,8 +63,9 @@ const Achievement = () => {
               <span className="about-eyebrow">GOOGLE FOR DEVELOPERS × HACK2SKILL</span>
               <h3 className="achv-heading">PromptWars — Build, Pitch &amp; Win in a Day</h3>
               <p className="achv-bio">
-                Competed in PromptWars, a nationwide AI hackathon by Google for Developers and
-                Hack2Skill, across an offline build sprint and a follow-up online round.
+                Competed in PromptWars, a nationwide AI hackathon series by Google for Developers
+                and Hack2Skill, across two independent hackathons &mdash; an in-person/offline
+                edition and a separate virtual edition.
               </p>
 
               <div className="achv-rounds">
@@ -77,6 +84,27 @@ const Achievement = () => {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="achv-subsection">
+            <span className="about-eyebrow">GOOGLE FOR DEVELOPERS</span>
+            <h3 className="achv-heading">Google DevFest 2025</h3>
+            <p className="achv-bio">
+              Attended DevFest 2025, connecting with the developer community and catching up on
+              the latest across web, cloud, and AI.
+            </p>
+
+            {devfestImages.length > 0 ? (
+              <div className="achv-simple-gallery">
+                {devfestImages.map((src, i) => (
+                  <div className="achv-simple-tile" key={src}>
+                    <img src={src} alt={`Google DevFest 2025 moment ${i + 1}`} loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="achv-gallery-placeholder">Photos coming soon.</p>
+            )}
           </div>
         </Container>
       </section>

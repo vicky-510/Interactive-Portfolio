@@ -9,16 +9,19 @@ const services = [
     icon: IoCode,
     title: 'Web Development',
     description: 'Offering excellent web development services to create responsive and user-friendly websites. Elevate your online presence with expertly crafted solutions.',
+    accent: 'gold',
   },
   {
     icon: IoPlanet,
     title: 'Ecommerce Development',
     description: 'I specialize in building secure, scalable eCommerce platforms that enhance online sales and provide a seamless shopping experience.',
+    accent: 'lime',
   },
   {
     icon: SiPayloadcms,
     title: 'CMS Development',
     description: 'Empower your website with our CMS solutions for smooth, hassle-free content updates and management.',
+    accent: 'teal',
   },
 ];
 
@@ -32,16 +35,16 @@ function Service() {
             <h2 className="service-title">SERVICES</h2>
           </div>
           <div className="row">
-            {services.map(({ icon: Icon, title, description }, i) => (
+            {services.map(({ icon: Icon, title, description, accent }, i) => (
               <div className="col-md-4 service-mb-space" key={title}>
                 <div
-                  className="service-card service-card-reveal"
+                  className={`service-card service-card-reveal service-accent-${accent}`}
                   style={{ animationDelay: `${i * 150}ms` }}
                 >
                   <div className="service-icon-color">
                     <Icon size={40} color="#182C61" />
                   </div>
-                  <h3 className="card-title text-white service-title-fw">{title}</h3>
+                  <h3 className="card-title service-title-fw">{title}</h3>
                   <p className="card-text service-desc-color">{description}</p>
                 </div>
               </div>

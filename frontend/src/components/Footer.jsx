@@ -2,7 +2,7 @@
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaLinkedin, FaWhatsapp, FaGithub, FaMailBulk, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { SiLeetcode } from "react-icons/si";
 
 const socialLinks = [
@@ -15,7 +15,7 @@ const socialLinks = [
 const quickLinks = [
   { to: '/#About', label: 'About' },
   { to: '/#Service', label: 'Services' },
-  { to: '/Contact', label: 'Contact' },
+  { to: '/#Contact', label: 'Contact' },
   { to: '/VoicePort', label: 'VoicePort' },
 ];
 
@@ -44,17 +44,11 @@ function Footer() {
             </div>
 
             <div className="footer-col">
-              <h4 className="footer-col-title">Have a project in mind?</h4>
-              <p className="footer-bio">Let&rsquo;s talk about how I can help bring it to life.</p>
-              <Link to="/Contact" className="footer-cta-btn">Hire Me</Link>
-            </div>
-
-            <div className="footer-col">
               <h4 className="footer-col-title">Links</h4>
               <ul className="footer-link-list">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <Link to={link.to} className="footer-link-v2">{link.label}</Link>
+                    <HashLink to={link.to} className="footer-link-v2" smooth>{link.label}</HashLink>
                   </li>
                 ))}
               </ul>

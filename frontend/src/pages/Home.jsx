@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Starter from '../components/Starter'
 import Service from '../components/Service'
 import Experience from '../components/Experience'
 import Achievement from '../components/Achievement'
+// import Tours from '../components/Tours'
 // import Demo from '../components/Demo'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import About from '../components/About'
+import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { HashLink } from "react-router-hash-link";
@@ -33,7 +34,8 @@ import { HashLink } from "react-router-hash-link";
   return (
     <>
     <Navbar />
-    <Starter />
+    {/* <Starter /> */}
+    <About />
     {/* <WebSpeech /> */}
     <Projects />
 
@@ -44,13 +46,13 @@ import { HashLink } from "react-router-hash-link";
 
     <Achievement />
 
-    <Service />
-   
+    {/* <Tours /> */}
 
     <Skills />
-   
 
-    <About />
+    <Service />
+
+    <Contact />
 
     <Footer />
 

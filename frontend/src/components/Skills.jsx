@@ -1,4 +1,5 @@
 // import React from "react";
+import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import html5 from '../assets/img/html5.webp';
 import css3 from '../assets/img/css-3.webp';
@@ -68,13 +69,13 @@ const Skills = () => {
       <div id="Skills" className="rem-space">
       </div>
       <section className='skill-bg-color'>
-        <div className="skill-card">
+        <Container className="skill-card">
           <h2 className="text-center weight skill-title">
             SKILLS
           </h2>
           <SkillRow skills={frontendSkills} direction="left" />
           <SkillRow skills={backendSkills} direction="right" />
-        </div>
+        </Container>
       </section>
     </>
   );

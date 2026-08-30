@@ -1,91 +1,105 @@
-import {useState} from 'react';
+import { useEffect, useState } from 'react';
 import { HashLink } from "react-router-hash-link";
 import logo from '../assets/img/logo_waran.gif';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsFillHouseFill, BsFillInfoSquareFill } from "react-icons/bs";
-import { FaThList } from "react-icons/fa";
-import { MdWork} from "react-icons/md";
-import { SiPaloaltosoftware } from "react-icons/si";
-import { BiSolidContact } from "react-icons/bi";
-import { RiSettings4Fill} from "react-icons/ri";
-import { SiBattledotnet } from "react-icons/si";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaTimes } from "react-icons/fa";
+
+const navLinks = [
+  { to: '/#About', label: 'Home' },
+  { to: '/#Projects', label: 'Projects' },
+  { to: '/#Experience', label: 'Experience' },
+  { to: '/#Hackathon', label: 'Hackathon' },
+  { to: '/#Skills', label: 'Skills' },
+  { to: '/#Service', label: 'Service' },
+  { to: '/#Contact', label: 'Contact' },
+  { to: '/VoicePort', label: 'Voice Port' },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleNavbar = () => setIsOpen((prev) => !prev);
+  const closeNavbar = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   return (
-    <div>
-      <nav className="navbar navbar-dark navbar-expand-lg fixed-top portfolio-navbar navbars-common-first" >
-        <div className="container">
-          <HashLink to="/" className="navbar-brand d-flex align-items-center justify-content-center justify-content-lg-start" >
-            <img src={logo} className="img-fluid navbars-img-css"  alt="website logo" />
+    <>
+      <nav className={`nav-glass ${isScrolled ? 'nav-glass-scrolled' : ''}`}>
+        <div className="nav-glass-inner">
+          <HashLink to="/" className="nav-brand" onClick={closeNavbar}>
+            <img src={logo} className="nav-brand-img" alt="website logo" />
           </HashLink>
-          <button className="navbar-toggler navbars-btn-1" type="button" onClick={toggleNavbar} >
-          {isOpen ? <FaTimes className='navbars-icon-common-toggle'/> : <FaBars className='navbars-icon-common-toggle'/>}
+
+          <ul className="nav-links-desktop">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <HashLink to={link.to} className="nav-link-modern" smooth>
+                  {link.label}
+                </HashLink>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            className={`nav-hamburger ${isOpen ? 'nav-hamburger-open' : ''}`}
+            type="button"
+            onClick={toggleNavbar}
+            aria-label="Toggle navigation"
+            aria-expanded={isOpen}
+          >
+            <span />
+            <span />
+            <span />
           </button>
-          <div className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav" >
-            <ul className="navbar-nav ms-auto align-items-center justify-content-center justify-content-lg-start" >
-           
-              <li className="nav-item">
-              <BsFillHouseFill size={27} color='#03A9F4' className='icon navbars-icon-css1' id='icon' />
-                <HashLink to="/#Home" className="nav-link link-font-size" id="nav" smooth>
-                  Home</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <FaThList size={22} color='#03A9F4'  className='icon navbars-icon-css2' id='icon'/>
-                <HashLink to="/#Projects" className="nav-link link-font-size" smooth>
-                 Projects</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <MdWork size={26} color='#03A9F4' className='icon navbars-icon-css3' id='icon'/>
-                <HashLink to="/#Experience" className="nav-link link-font-size" smooth>
-                Experience</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <RiSettings4Fill size={26} color='#03A9F4'  className='icon navbars-icon-css4' id='icon'/>
-                <HashLink to="/#Service" className="nav-link link-font-size" smooth>
-                Service</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <SiPaloaltosoftware size={22} color='#03A9F4'  className='icon navbars-icon-css5'   id='icon'/>
-                <HashLink to="/#Skills" className="nav-link link-font-size" smooth>
-                Skills</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <BsFillInfoSquareFill size={20} color='#03A9F4'  className='icon navbars-icon-css6' id='icon'/>
-                <HashLink to="/#About" className="nav-link link-font-size" smooth>
-               About</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <BiSolidContact size={26} color='#03A9F4'  className='icon navbars-icon-css7'   id='icon'/>
-                <HashLink to="/Contact" className="nav-link link-font-size" smooth>
-                Contact</HashLink>
-              </li>
-
-              <li className="nav-item">
-              <SiBattledotnet size={26} color='#03A9F4'  className='icon navbars-icon-css8'   id='icon'/>
-                <HashLink to="/VoicePort" className="nav-link link-font-size" smooth>
-                Voice Port</HashLink>
-              </li>
-
-
-              {/* Admin login intentionally not linked from the UI; reachable directly at /admin-login */}
-            </ul>
-          </div>
         </div>
       </nav>
-    </div>
+
+      <div
+        className={`nav-drawer-backdrop ${isOpen ? 'nav-drawer-backdrop-open' : ''}`}
+        onClick={closeNavbar}
+        aria-hidden="true"
+      />
+
+      <div className={`nav-drawer ${isOpen ? 'nav-drawer-open' : ''}`}>
+        <button className="nav-drawer-close" type="button" onClick={closeNavbar} aria-label="Close navigation">
+          <FaTimes size={18} />
+        </button>
+
+        <ul className="nav-drawer-links">
+          {navLinks.map((link, i) => (
+            <li key={link.label} style={{ transitionDelay: `${isOpen ? i * 50 : 0}ms` }}>
+              <HashLink to={link.to} className="nav-drawer-link" smooth onClick={closeNavbar}>
+                {link.label}
+              </HashLink>
+            </li>
+          ))}
+        </ul>
+
+        <div className="nav-drawer-socials">
+          <a href="https://github.com/vicky-510" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <FaGithub size={18} />
+          </a>
+          <a href="https://www.linkedin.com/in/vwaran" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedin size={18} />
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=8189950272" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <FaWhatsapp size={18} />
+          </a>
+        </div>
+      </div>
+    </>
   )
 }
 
