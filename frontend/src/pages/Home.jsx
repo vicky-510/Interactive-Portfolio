@@ -23,20 +23,20 @@ import { HashLink } from "react-router-hash-link";
     {/* <Starter /> */}
     <About />
     {/* <WebSpeech /> */}
-    <Reveal><Projects /></Reveal>
+    <Projects />
 
 
 
     {/* <Demo /> */}
-    <Reveal><Experience /></Reveal>
+    <Experience />
 
-    <Reveal><Achievement /></Reveal>
+    <Achievement />
 
     {/* <Tours /> */}
 
     <Reveal><Skills /></Reveal>
 
-    <Reveal><Service /></Reveal>
+    <Service />
 
     <Reveal><Contact /></Reveal>
 

@@ -5,7 +5,7 @@ import { Container, Button } from 'react-bootstrap';
 import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import vignesh from '../assets/img/vignesh-hero.webp'
-import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload, FaChevronDown } from "react-icons/fa";
 import '../assets/styles/Main.css';
 
 const heroContentVariants = {
@@ -96,6 +96,8 @@ const About = () => {
     <>
       <div id="About" className="rem-space"></div>
       <section className='about-section-v2 about-hero'>
+        <div className="about-bg-blob about-bg-blob-1" aria-hidden="true" />
+        <div className="about-bg-blob about-bg-blob-2" aria-hidden="true" />
         <Container>
           <div className="about-grid" ref={sectionRef}>
             <motion.div
@@ -105,7 +107,9 @@ const About = () => {
               animate="show"
             >
               <motion.span className="about-eyebrow" variants={heroItemVariants}>SOFTWARE ENGINEER · MERN / MEAN</motion.span>
-              <motion.h1 className="about-heading about-heading-hero" variants={heroItemVariants}>Hi, I&apos;m Vigneshwaran M</motion.h1>
+              <motion.h1 className="about-heading about-heading-hero" variants={heroItemVariants}>
+                Hi, I&apos;m <span className="about-name-gradient">Vigneshwaran M</span>
+              </motion.h1>
               <motion.p className="about-bio" variants={heroItemVariants}>
                 A software engineer from Chennai who builds fast, reliable web applications
                 end to end &mdash; from responsive Angular/React interfaces to Node.js APIs and
@@ -157,6 +161,11 @@ const About = () => {
             </motion.div>
           </div>
         </Container>
+
+        <div className="about-scroll-cue">
+          <span>Scroll</span>
+          <FaChevronDown size={14} />
+        </div>
       </section>
     </>
   );
