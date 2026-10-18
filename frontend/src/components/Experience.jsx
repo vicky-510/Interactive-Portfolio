@@ -1,9 +1,12 @@
-// import React, { useState } from 'react';
-import { useState } from 'react';
+// import React from 'react';
+import { useRef } from 'react';
+import { motion, useScroll } from 'framer-motion';
+import { Container } from 'react-bootstrap';
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import cert from '../assets/img/intern_cert.webp';
-import { PiCertificateDuotone } from "react-icons/pi";
+import { FaCheckCircle } from 'react-icons/fa';
+import { IoIosApps } from 'react-icons/io';
+import { StaggerGrid, StaggerItem } from './motion/StaggerGrid';
 
 const experiences = [
   {
@@ -41,75 +44,66 @@ const experiences = [
       'Proactively resolved complex issues in the Android app through debugging and troubleshooting, ensuring flawless functionality, seamless user interactions, and exceptional user satisfaction.',
     ],
     skills: ['Core Java', 'XML', 'JSON'],
-    hasCertificate: true,
   },
 ];
 
 const Experience = () => {
-  const [showCertificate, setShowCertificate] = useState(false);
-
-  const toggleCertificate = () => {
-    setShowCertificate(!showCertificate);
-  };
-
-  const certIcon = <PiCertificateDuotone size={25} className='icon cert_css1' />;
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 0.85', 'end 0.6'],
+  });
 
   return (
     <>
       <div id="Experience" className="rem-space"></div>
       <section className="portfolio-block cv portfolio_css1">
-        <div className="container exp-size">
+        <Container>
           <div className="heading text-center exp-css1">
             <h2 className='exp-head-css1'>EXPERIENCE</h2>
           </div>
 
-          <div className="timeline">
-            {experiences.map((exp, i) => (
-              <div
-                className={`timeline-item timeline-accent-${exp.accent} timeline-delay-${i}`}
-                key={exp.title}
-              >
-                <div className="timeline-marker" />
-                <div className="timeline-card">
-                  <span className="timeline-period">{exp.period}</span>
-                  <h3 className='exp-title'>{exp.title}</h3>
-                  <h4 className={`organization organiz-exp-${exp.accent}`}>{exp.organization}</h4>
-                  <hr className='common-hr' />
+          <div className="timeline" ref={timelineRef}>
+            <div className="timeline-track" />
+            <motion.div className="timeline-progress" style={{ scaleY: scrollYProgress }} />
 
-                  {exp.bullets.map((bullet) => (
-                    <p className='common-letterSpace' key={bullet}>
-                      <strong className={`star-design-${exp.accent}`}>★</strong> {bullet}
-                    </p>
-                  ))}
+            <StaggerGrid className="timeline-items">
+              {experiences.map((exp) => (
+                <StaggerItem
+                  className={`timeline-item timeline-accent-${exp.accent}`}
+                  key={exp.title}
+                >
+                  <div className="timeline-marker" />
+                  <div className="timeline-card">
+                    <span className="timeline-period">{exp.period}</span>
+                    <h3 className='exp-title'>{exp.title}</h3>
+                    <h4 className={`organization organiz-exp-${exp.accent}`}>{exp.organization}</h4>
+                    <hr className='common-hr' />
 
-                  <p className='common-letterSpace2'>
-                    <strong className={`star-design-${exp.accent}`}>★</strong> Skills:
-                    {exp.skills.map((skill) => (
-                      <span className='skill-2_1' key={skill}>{skill}</span>
-                    ))}
-                  </p>
-
-                  {exp.hasCertificate && (
-                    <>
-                      <button className="btn btn-green mx-auto d-block" onClick={toggleCertificate}>
-                        <span className='common-letterSpace1'>
-                          {showCertificate ? 'Hide Certificate' : 'View Certificate'}
-                          {certIcon}
+                    {exp.bullets.map((bullet) => (
+                      <p className='common-letterSpace' key={bullet}>
+                        <span className={`exp-bullet-icon star-design-${exp.accent}`}>
+                          <FaCheckCircle size={14} />
                         </span>
-                      </button>
+                        {bullet}
+                      </p>
+                    ))}
 
-                      {showCertificate && (
-                        <div className="text-center" id="cert">
-                          <img src={cert} className="img-fluid mx-auto d-block exp-img-border" alt="Internship certificate" width="600" loading="lazy" />
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-              </div>
-            ))}
+                    <p className='common-letterSpace2'>
+                      <span className={`exp-bullet-icon star-design-${exp.accent}`}>
+                        <IoIosApps size={16} />
+                      </span>
+                      Skills:
+                      {exp.skills.map((skill) => (
+                        <span className='project-skill-desc exp-skill-pill' key={skill}>{skill}</span>
+                      ))}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerGrid>
           </div>
-        </div>
+        </Container>
       </section>
     </>
   );
