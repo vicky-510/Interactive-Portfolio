@@ -1,0 +1,33 @@
+/* Public-site design tokens. Values mirror the existing hardcoded
+   colors/radii/transitions in Main.css so adopting them is visually a no-op. */
+:root {
+  --site-color-navy: #182C61;
+  --site-color-navy-rgb: 24, 44, 97;
+  --site-color-accent: #03BFCB;
+  --site-color-accent-rgb: 3, 191, 203;
+  --site-color-blue: #45aaf2;
+  --site-color-blue-rgb: 69, 170, 242;
+  --site-color-white: #ffffff;
+  --site-color-white-rgb: 255, 255, 255;
+  --site-color-muted: #6c7a99;
+
+  --site-gradient-accent: linear-gradient(135deg, var(--site-color-accent), var(--site-color-blue));
+
+  --site-radius-xs: 4px;
+  --site-radius-sm: 5px;
+  --site-radius-md: 8px;
+  --site-radius-lg: 10px;
+  --site-radius-xl: 12px;
+  --site-radius-2xl: 14px;
+  --site-radius-3xl: 16px;
+  --site-radius-4xl: 20px;
+  --site-radius-pill: 999px;
+
+  --site-transition-fast: 0.2s ease;
+  --site-transition-base: 0.3s ease;
+  --site-transition-slow: 0.6s ease;
+
+  --site-shadow-sm: 0 4px 14px rgba(var(--site-color-navy-rgb), 0.1);
+  --site-shadow-md: 0 8px 24px rgba(var(--site-color-navy-rgb), 0.12);
+  --site-shadow-lg: 0 12px 32px rgba(var(--site-color-navy-rgb), 0.18);
+}

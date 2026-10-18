@@ -1,6 +1,7 @@
 // import React from 'react';
 import { useMemo, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { StaggerGrid, StaggerItem } from './motion/StaggerGrid';
 import heroImg from '../assets/img/promptwars/hackathon-vignesh.webp';
 import bannerImg from '../assets/img/promptwars/prompt_wars_banner.webp';
 import buildingImg from '../assets/img/promptwars/building-view.webp';
@@ -67,13 +68,13 @@ const Achievement = () => {
           <h2 className="text-center achv-title">HACKATHONS &amp; EVENTS</h2>
 
           <div className="achv-grid">
-            <div className="achv-gallery">
-              {galleryImages.map((img, i) => (
-                <div className={`achv-tile ${img.className} achv-delay-${i}`} key={img.src}>
+            <StaggerGrid className="achv-gallery">
+              {galleryImages.map((img) => (
+                <StaggerItem className={`achv-tile ${img.className}`} key={img.src}>
                   <img src={img.src} alt={img.alt} loading="lazy" />
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerGrid>
 
             <div className="achv-content">
               <span className="about-eyebrow">GOOGLE FOR DEVELOPERS × HACK2SKILL</span>
@@ -130,13 +131,13 @@ const Achievement = () => {
             </p>
 
             {activeImages.length > 0 ? (
-              <div className="achv-simple-gallery" key={activeYear}>
+              <StaggerGrid className="achv-simple-gallery" key={activeYear}>
                 {activeImages.map((src, i) => (
-                  <div className="achv-simple-tile" key={src}>
+                  <StaggerItem className="achv-simple-tile" key={src}>
                     <img src={src} alt={`Google DevFest ${activeYear} moment ${i + 1}`} loading="lazy" />
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerGrid>
             ) : (
               <p className="achv-gallery-placeholder">Photos coming soon.</p>
             )}

@@ -33,7 +33,7 @@ const backendSkills = [
 
 const SkillCard = ({ src, label }) => (
   <div className="skill-marquee-card">
-    <img src={src} className="skill-img-all" alt={label} />
+    <img src={src} className="skill-img-all" alt={label} loading="lazy" />
     <span className="skill-title-h6">{label}</span>
   </div>
 );

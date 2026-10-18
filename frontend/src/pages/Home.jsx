@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Service from '../components/Service'
 import Experience from '../components/Experience'
 import Achievement from '../components/Achievement'
@@ -12,6 +9,7 @@ import About from '../components/About'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import Reveal from '../components/motion/Reveal'
 import { HashLink } from "react-router-hash-link";
 
 
@@ -19,40 +17,28 @@ import { HashLink } from "react-router-hash-link";
 
 
  function Home (){
-
-  useEffect(() => {
-
-    
-    AOS.init({
-      duration: 1200,
-    });
-    AOS.refresh();
-
-  }, []);
-
-
   return (
     <>
     <Navbar />
     {/* <Starter /> */}
     <About />
     {/* <WebSpeech /> */}
-    <Projects />
+    <Reveal><Projects /></Reveal>
 
 
-  
+
     {/* <Demo /> */}
-    <Experience />
+    <Reveal><Experience /></Reveal>
 
-    <Achievement />
+    <Reveal><Achievement /></Reveal>
 
     {/* <Tours /> */}
 
-    <Skills />
+    <Reveal><Skills /></Reveal>
 
-    <Service />
+    <Reveal><Service /></Reveal>
 
-    <Contact />
+    <Reveal><Contact /></Reveal>
 
     <Footer />
 

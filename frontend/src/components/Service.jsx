@@ -3,6 +3,7 @@ import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IoCode, IoPlanet } from 'react-icons/io5';
 import { SiPayloadcms } from 'react-icons/si';
+import { StaggerGrid, StaggerItem } from './motion/StaggerGrid';
 
 const services = [
   {
@@ -34,22 +35,19 @@ function Service() {
           <div className="heading">
             <h2 className="service-title">SERVICES</h2>
           </div>
-          <div className="row">
-            {services.map(({ icon: Icon, title, description, accent }, i) => (
-              <div className="col-md-4 service-mb-space" key={title}>
-                <div
-                  className={`service-card service-card-reveal service-accent-${accent}`}
-                  style={{ animationDelay: `${i * 150}ms` }}
-                >
+          <StaggerGrid className="row">
+            {services.map(({ icon: Icon, title, description, accent }) => (
+              <StaggerItem className="col-md-4 service-mb-space" key={title}>
+                <div className={`service-card service-accent-${accent}`}>
                   <div className="service-icon-color">
-                    <Icon size={40} color="#182C61" />
+                    <Icon size={40} color="var(--site-color-navy)" />
                   </div>
                   <h3 className="card-title service-title-fw">{title}</h3>
                   <p className="card-text service-desc-color">{description}</p>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
       </section>
     </>

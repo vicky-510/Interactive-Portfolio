@@ -100,7 +100,7 @@ const Experience = () => {
 
                       {showCertificate && (
                         <div className="text-center" id="cert">
-                          <img src={cert} className="img-fluid mx-auto d-block exp-img-border" alt="Internship certificate" width="600" />
+                          <img src={cert} className="img-fluid mx-auto d-block exp-img-border" alt="Internship certificate" width="600" loading="lazy" />
                         </div>
                       )}
                     </>

@@ -13,6 +13,7 @@ import { PiLightningFill } from 'react-icons/pi';
 import { IoIosApps } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
+import { StaggerGrid, StaggerItem } from './motion/StaggerGrid';
 
 const projects = [
   {
@@ -73,10 +74,10 @@ function Projects() {
         <div className="container-md">
           <h2 className='text-center project-title'>PROJECTS</h2>
 
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            {projects.map((project, i) => (
-              <div className="col" key={project.title}>
-                <div className={`project-card-v2 project-delay-${i % 5}`}>
+          <StaggerGrid className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {projects.map((project) => (
+              <StaggerItem className="col" key={project.title}>
+                <div className="project-card-v2">
                   <img src={project.img} className="project-card-img" alt={project.title} loading="lazy" />
 
                   <div className="project-card-body">
@@ -105,9 +106,9 @@ function Projects() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGrid>
 
           <h2 className='text-center mt-5 project-text-more'>
             <Link to='https://github.com/vicky-510/' target="_blank" rel="noopener noreferrer" className="text-decoration-none project-text-more">
