@@ -1,17 +1,17 @@
 // import React from "react";
 import { Container } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import html5 from '../assets/img/html5.webp';
-import css3 from '../assets/img/css-3.webp';
-import js from '../assets/img/JS.webp';
-import bootstrap from '../assets/img/Bootstrap-frame.webp';
-import react from '../assets/img/react-1.webp';
-import mysql from '../assets/img/mysql-4.webp';
-import node from '../assets/img/node-1.webp';
-import express from '../assets/img/express-1.webp';
-import angular from '../assets/img/angular.webp';
-import typescript from '../assets/img/typescript.webp';
-import mongodb from '../assets/img/mongo-db.webp';
+import html5 from '../assets/img/skills/html5.webp';
+import css3 from '../assets/img/skills/css-3.webp';
+import js from '../assets/img/skills/JS.webp';
+import bootstrap from '../assets/img/skills/Bootstrap-frame.webp';
+import react from '../assets/img/skills/react-1.webp';
+import mysql from '../assets/img/skills/mysql-4.webp';
+import node from '../assets/img/skills/node-1.webp';
+import express from '../assets/img/skills/express-1.webp';
+import angular from '../assets/img/skills/angular.webp';
+import typescript from '../assets/img/skills/typescript.webp';
+import mongodb from '../assets/img/skills/mongo-db.webp';
 import '../assets/styles/Main.css';
 
 const frontendSkills = [

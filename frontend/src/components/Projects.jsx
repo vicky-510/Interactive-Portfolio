@@ -1,12 +1,12 @@
 // import React from "react";
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import pro1 from '../assets/img/pro_1.webp';
-import pro2 from '../assets/img/pro_2.webp';
-import pro3 from '../assets/img/pro_3.webp';
-import pro4 from '../assets/img/pro_4.webp';
-import pro6 from '../assets/img/pro_6.webp';
-import pro7 from '../assets/img/pro_7.webp';
+import supraiq from '../assets/img/project/supraiq.webp';
+import lexiclear from '../assets/img/project/lexiclear.webp';
+import pro1 from '../assets/img/project/pro_1.webp';
+import pro2 from '../assets/img/project/pro_2.webp';
+import pro4 from '../assets/img/project/pro_4.webp';
+import pro7 from '../assets/img/project/pro_7.webp';
 
 import { BsCalendar2CheckFill } from 'react-icons/bs';
 import { PiLightningFill } from 'react-icons/pi';
@@ -15,6 +15,30 @@ import { Link } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 
 const projects = [
+  {
+    img: supraiq,
+    title: 'SupraIQ',
+    period: 'Sep 2026',
+    type: 'Web application',
+    skills: ['React JS', 'Node JS', 'MongoDB'],
+    repo: 'https://supraiq.vwaran.com/',
+  },
+  {
+    img: lexiclear,
+    title: 'Lexi Clear AI',
+    period: 'Sep 2026',
+    type: 'Web application',
+    skills: ['React JS', 'Node JS', 'MongoDB', 'Gemini'],
+    repo: 'https://lexiclearai.netlify.app/',
+  },
+  {
+    img: pro7,
+    title: 'Domain Insight',
+    period: 'May 2025 - June 2025',
+    type: 'Web application',
+    skills: ['Angular', 'Node JS', 'Typescript', 'WHOIS XML API', 'DNS Lookup API'],
+    repo: 'https://github.com/vicky-510/vDomain-insight-frontend',
+  },
   {
     img: pro1,
     title: 'A Software System for Integrated Food Ordering and Delivery',
@@ -32,36 +56,12 @@ const projects = [
     repo: 'https://github.com/vicky-510/Skill-Job-Recommendation-system',
   },
   {
-    img: pro3,
-    title: 'Blood Bank Management System Using Android Application',
-    period: 'Jan 2022 - Apr 2022',
-    type: 'Android application',
-    skills: ['Core Java', 'XML', 'Android', 'Firebase'],
-    repo: 'https://github.com/vicky-510',
-  },
-  {
     img: pro4,
     title: 'JSON Fetch Master',
     period: 'Mar 2023 - May 2023',
     type: 'Android application',
     skills: ['Core Java', 'Android', 'JSON', 'XML'],
     repo: 'https://github.com/vicky-510/Json-Fetch-Master',
-  },
-  {
-    img: pro6,
-    title: 'Student Management System - CRUD',
-    period: 'May 2024',
-    type: 'Web application',
-    skills: ['React JS', 'Node JS', 'MySQL', 'Express JS'],
-    repo: 'https://github.com/vicky-510/Student-management-system-crud',
-  },
-  {
-    img: pro7,
-    title: 'Domain Insight',
-    period: 'May 2025 - June 2025',
-    type: 'Web application',
-    skills: ['Angular', 'Node JS', 'Typescript', 'WHOIS XML API', 'DNS Lookup API'],
-    repo: 'https://github.com/vicky-510/vDomain-insight-frontend',
   },
 ];
 

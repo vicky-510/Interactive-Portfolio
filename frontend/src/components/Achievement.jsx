@@ -1,4 +1,5 @@
 // import React from 'react';
+import { useMemo, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import heroImg from '../assets/img/promptwars/hackathon-vignesh.webp';
 import bannerImg from '../assets/img/promptwars/prompt_wars_banner.webp';
@@ -9,11 +10,23 @@ import venueImg from '../assets/img/promptwars/hackathon_place_inner.webp';
 import goodiesImg from '../assets/img/promptwars/promptwars_goodies.webp';
 import '../assets/styles/Main.css';
 
-const devfestImages = Object.entries(
-  import.meta.glob('../assets/img/devfest/*.{webp,jpg,jpeg,png}', { eager: true })
-)
+const devfestModules = import.meta.glob('../assets/img/devfest/*/*.{webp,jpg,jpeg,png}', { eager: true });
+
+const devfestByYear = Object.entries(devfestModules)
   .sort(([a], [b]) => a.localeCompare(b))
-  .map(([, mod]) => mod.default);
+  .reduce((acc, [path, mod]) => {
+    const year = path.match(/devfest\/(\d{4})\//)?.[1];
+    if (!year) return acc;
+    (acc[year] ||= []).push(mod.default);
+    return acc;
+  }, {});
+
+const devfestYears = Object.keys(devfestByYear).sort((a, b) => b.localeCompare(a));
+
+const devfestBlurbs = {
+  2026: 'Back at DevFest 2026, swapping notes with the community on what shipped across web, cloud, and AI this year.',
+  2025: 'Attended DevFest 2025, connecting with the developer community and catching up on the latest across web, cloud, and AI.',
+};
 
 const galleryImages = [
   { src: heroImg, alt: 'Building the PromptWars submission at the venue', className: 'achv-tile-hero' },
@@ -43,6 +56,9 @@ const rounds = [
 ];
 
 const Achievement = () => {
+  const [activeYear, setActiveYear] = useState(devfestYears[0]);
+  const activeImages = useMemo(() => devfestByYear[activeYear] || [], [activeYear]);
+
   return (
     <>
       <div id="Hackathon" className="rem-space"></div>
@@ -88,17 +104,36 @@ const Achievement = () => {
 
           <div className="achv-subsection">
             <span className="about-eyebrow">GOOGLE FOR DEVELOPERS</span>
-            <h3 className="achv-heading">Google DevFest 2025</h3>
+            <div className="achv-devfest-header">
+              <h3 className="achv-heading">Google DevFest</h3>
+
+              {devfestYears.length > 1 && (
+                <div className="achv-year-tabs" role="tablist" aria-label="DevFest year">
+                  {devfestYears.map((year) => (
+                    <button
+                      key={year}
+                      type="button"
+                      role="tab"
+                      aria-selected={activeYear === year}
+                      className={`achv-year-tab ${activeYear === year ? 'achv-year-tab-active' : ''}`}
+                      onClick={() => setActiveYear(year)}
+                    >
+                      {year}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <p className="achv-bio">
-              Attended DevFest 2025, connecting with the developer community and catching up on
-              the latest across web, cloud, and AI.
+              {devfestBlurbs[activeYear] || `Moments from Google DevFest ${activeYear}.`}
             </p>
 
-            {devfestImages.length > 0 ? (
-              <div className="achv-simple-gallery">
-                {devfestImages.map((src, i) => (
+            {activeImages.length > 0 ? (
+              <div className="achv-simple-gallery" key={activeYear}>
+                {activeImages.map((src, i) => (
                   <div className="achv-simple-tile" key={src}>
-                    <img src={src} alt={`Google DevFest 2025 moment ${i + 1}`} loading="lazy" />
+                    <img src={src} alt={`Google DevFest ${activeYear} moment ${i + 1}`} loading="lazy" />
                   </div>
                 ))}
               </div>

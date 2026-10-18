@@ -1,9 +1,13 @@
 // import React from 'react';
+import { useEffect, useState } from 'react';
 import '../assets/styles/Main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaLinkedin, FaWhatsapp, FaGithub, FaMailBulk, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { FaLinkedin, FaWhatsapp, FaGithub, FaMailBulk, FaMapMarkerAlt, FaPhoneAlt, FaEye } from 'react-icons/fa';
 import { HashLink } from 'react-router-hash-link';
 import { SiLeetcode } from "react-icons/si";
+import { useGetVisitCountQuery, useIncrementVisitCountMutation } from '../slices/visitApiSlice';
+
+const VISIT_SESSION_KEY = 'vwaran-visit-counted';
 
 const socialLinks = [
   { href: 'https://www.linkedin.com/in/vwaran', label: 'LinkedIn', icon: FaLinkedin },
@@ -21,6 +25,33 @@ const quickLinks = [
 
 function Footer() {
   const getFullYear = () => new Date().getFullYear();
+
+  const [alreadyCounted] = useState(() => {
+    try {
+      return sessionStorage.getItem(VISIT_SESSION_KEY) === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const { data: countData } = useGetVisitCountQuery(undefined, { skip: !alreadyCounted });
+  const [incrementVisitCount, { data: incrementData }] = useIncrementVisitCountMutation();
+
+  useEffect(() => {
+    if (alreadyCounted) return;
+    incrementVisitCount()
+      .unwrap()
+      .then(() => {
+        try {
+          sessionStorage.setItem(VISIT_SESSION_KEY, 'true');
+        } catch {
+          // ignore storage errors (private browsing, etc.)
+        }
+      })
+      .catch(() => {});
+  }, [alreadyCounted, incrementVisitCount]);
+
+  const visitCount = incrementData?.count ?? countData?.count;
 
   return (
     <>
@@ -75,8 +106,14 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <div className="container">
+          <div className="container footer-bottom-row">
             <p className="footer-copyright">Copyright &copy; {getFullYear()} Vigneshwaran M. All rights reserved.</p>
+            {typeof visitCount === 'number' && (
+              <p className="footer-visit-count">
+                <FaEye size={14} className="footer-visit-icon" />
+                {visitCount.toLocaleString()} visits
+              </p>
+            )}
           </div>
         </div>
       </footer>
